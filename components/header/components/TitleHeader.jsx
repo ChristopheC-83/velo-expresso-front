@@ -16,7 +16,7 @@ export default function TitleHeader() {
       </h2>
       {menu && (
         <div
-          className="absolute inset-0 flex flex-col items-end pt-16 pr-4 overflow-hidden lg:hidden bg-neutral-500/30"
+          className="fixed inset-0 flex flex-col items-end pt-16 overflow-hidden lg:hidden bg-neutral-200/60"
           onClick={() => setMenu(false)}
         >
           <NavPhone />

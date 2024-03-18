@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="w-full text-white border-t-4 border-blue-ve">
+    <div className="relative w-full text-white border-t-4 border-blue-ve">
       <div className="bg-footer bg-cover bg-no-repeat bg-center h-[400px] ">
-        <div className="flex flex-col justify-between w-full h-full px-10 py-6">
-          <div className="mb-6">
+        <div className="flex flex-col justify-between w-full h-full p-4 sm:px-10 sm:py-6">
+          <div className="p-4 mb-6 bg-neutral-800/50 w-fit rounded-xl">
             <h3 className="mb-3">Nous contacter :</h3>
             <h4 className="mb-2">
               <a
@@ -28,10 +28,11 @@ export default function Footer() {
               </a>
             </h4>
           </div>
-          <div className="flex-grow"></div>
-          <div className="flex flex-col justify-between md:flex-row">
-            <h4><Link href="/legal-notice">Mentions Légales</Link></h4>
-            <h4>&copy; COPYRIGHT VELO-EXPRESSO - 2024</h4>
+          <div className="flex flex-col justify-between md:items-center md:flex-row ">
+            <div className="p-4 rounded-xl bg-neutral-800/60">
+              <h4><Link href="/legal-notice">Mentions Légales</Link></h4>
+            </div>
+            <h5>&copy; COPYRIGHT VELO-EXPRESSO - 2024</h5>
           </div>
         </div>
       </div>

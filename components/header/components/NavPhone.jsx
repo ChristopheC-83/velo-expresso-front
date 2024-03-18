@@ -1,13 +1,13 @@
 import { navlinks } from "@/lib/navlinks";
 import Link from "next/link";
 
-export default function NavPhone({ menu }) {
+export default function NavPhone() {
   return (
     <div
-      className={`flex flex-col items-end ml-auto w-fit menu-appear`}
+      className={`flex flex-col items-end ml-auto w-full menu-appear text-black bg-gradient-to-l from-neutral-200/90 to-neutral-200/20`}
     >
       {navlinks.map((link) => (
-        <div key={link.id} className="p-6 w-fit">
+        <div key={link.id} className="p-6 pr-8 w-fit">
           <Link href={link.path}>
             <div className="flex flex-col items-end justify-end">
               <h3>{link.logo}</h3>
