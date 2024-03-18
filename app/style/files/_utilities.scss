@@ -1,0 +1,14 @@
+.flexMid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navScreenHover{
+    &:hover {
+        font-weight: bold;
+        transform: scale(1.1) translateY(5px);
+        transition: all 0.4s ease-in-out;
+
+    }
+}
