@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.bunny.net/css?family=roboto:100,300,700,900');
+    font-weight: 100 300 700 900;
+    font-style: normal;
+  }
+h1 {
+  font-size: clamp(32px, calc(24px + 2.2vw), 60px);
+  letter-spacing: calc(1px + 0.12vw);
+//   font-family: 'Roboto', sans-serif;
+}
+h2 {
+  font-size: clamp(23px, calc(20px + 1.65vw), 40px);
+  letter-spacing: calc(1px + 0.04vw);
+  font-family: 'Roboto', sans-serif;
+}
+h3 {
+  font-size: clamp(20px, calc(20px + 1vw), 29px);
+  letter-spacing: calc(1px + 0.02vw);
+  font-family: 'Roboto', sans-serif;
+}
+h4 {
+  font-size: clamp(18px, calc(14px + 0.7vw), 22px);
+  line-height: clamp(22px, calc(20px + 1.2vw), 35px);
+  font-family: 'Roboto', sans-serif;
+}
+p {
+  font-size: clamp(16px, calc(14px + 0.6vw), 20px);
+  line-height: clamp(20px, calc(20px + 1vw), 33px);
+  font-family: 'Roboto', sans-serif;
+}
