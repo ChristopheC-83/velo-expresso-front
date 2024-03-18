@@ -12,11 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body className="min-h-screen">
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <section className="grow">{children}</section>
-            <Footer />
-          </div>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <section className="lg:mt-32 grow">{children}</section>
+          <Footer />
+        </div>
       </body>
     </html>
   );
