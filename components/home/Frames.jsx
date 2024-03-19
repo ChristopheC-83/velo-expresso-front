@@ -1,14 +1,17 @@
 import Image from "next/image";
 import Container from "../container/Container";
 import { frames } from "@/lib/frames";
-
+// sur smartphone, les bloc sont en colonne les uns au dessous des autres
+// sur desktop, les blocs sont en ligne, 2 par ligne
 export default function Frames() {
+
+  
   return (
     <Container>
       <div className="min-h-screen sm:mt-8 md:mt-12">
-        <div className="flex flex-col border border-red-500 lg:gap-8 lg:flex-row lg:flex-wrap lg:justify-center">
+        <div className="flex flex-col lg:gap-8 lg:flex-row lg:flex-wrap lg:justify-center">
           {frames.map((frame, index) => (
-            <div key={frame.id} className={`relative lg:w-2/5 lg:h-[600px] `}>
+            <div key={frame.id} className={`relative lg:w-2/5 lg:h-[600px] lg:shadow-lg hover:scale-[1.01] lg:transition-all lg:duration-500 `}>
               <Image
                 src={frame.image}
                 alt={frame.title}
@@ -18,7 +21,7 @@ export default function Frames() {
               />
               {/* overlay si image trop clair */}
               <div
-                className={`absolute inset-0 bg-neutral-900 bg-opacity-${frame.overlay} hover:translate-y-10`}
+                className={`absolute inset-0 bg-neutral-900 bg-opacity-30`}
               ></div>
               <div className="absolute inset-0 flex flex-col items-center justify-end pb-16 text-white gap-y-4 lg:justify-between lg:py-12">
                 <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">

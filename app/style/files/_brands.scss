@@ -1,0 +1,44 @@
+.partenaire-ext {
+//   width: 16vw;
+//   height: 16vw;
+//   min-width: 140px;
+//   min-height: 140px;
+  border: 5px solid #000;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+}
+
+.bgc-rotate {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(
+    0deg,
+    #0bbbec 0%,
+    #033b4b 45%,
+    #033b4b 55%,
+    #0bbbec 100%
+  );
+  animation: 5s rotateBgc infinite linear;
+}
+.logo-brand {
+  display: block;
+  width: 92%;
+  height: 92%;
+  border: 5px solid #000;
+  border-radius: 50%;
+  z-index: 5;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+}
+
+@keyframes rotateBgc {
+  to {
+    rotate: 360deg;
+  }
+}
