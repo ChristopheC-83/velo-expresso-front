@@ -46,6 +46,7 @@ export default function Slider() {
       >
         <div className="flex flex-col justify-center w-full h-full border border-red-500">
           <div className="relative w-full h-full text-5xl text-white">
+            <div className={`absolute inset-0 ${sliders[sliderNumber].overlay && "bg-neutral-800/80"}`}></div>
             <div className="absolute p-4 translate-x-1/2 top-[25%] right-1/2">
               {sliders[sliderNumber].title}
             </div>
