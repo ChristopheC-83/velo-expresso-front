@@ -7,7 +7,7 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 export default function Slider() {
-  const [sliderNumber, setSliderNumber] = useState(1);
+  const [sliderNumber, setSliderNumber] = useState(0);
 
   console.log(sliders[sliderNumber].image);
 
@@ -28,25 +28,24 @@ export default function Slider() {
   }
 
   return (
-    <div className="w-full min-h-[90vh] bg-dark-ve ">
+    <div className="w-full min-h-[90vh] bg-ve-dark ">
       <div
-        className={`relative w-full bg-no-repeat 
-        bg-${
+        className={`relative w-full bg-no-repeat bg-${
           sliders[sliderNumber].style ? sliders[sliderNumber].style : "cover"
+        } bg-${
+          sliders[sliderNumber].alignX
         }
-         bg${
-           sliders[sliderNumber].alignX ? sliders[sliderNumber].alignX : ""
-         }-${
-          sliders[sliderNumber].alignY ? sliders[sliderNumber].alignY : "top"
-        }  
-         
-         h-[90vh]`}
+        } h-[90vh]`}
         key={sliders[sliderNumber].id}
         style={{ backgroundImage: `url(${sliders[sliderNumber].image})` }}
       >
-        <div className="flex flex-col justify-center w-full h-full border border-red-500">
+        <div className="flex flex-col justify-center w-full h-full">
           <div className="relative w-full h-full text-5xl text-white">
-            <div className={`absolute inset-0 ${sliders[sliderNumber].overlay && "bg-neutral-800/80"}`}></div>
+            <div
+              className={`absolute inset-0 ${
+                sliders[sliderNumber].overlay && "bg-neutral-900/70"
+              }`}
+            ></div>
             <div className="absolute p-4 translate-x-1/2 top-[25%] right-1/2">
               {sliders[sliderNumber].title}
             </div>

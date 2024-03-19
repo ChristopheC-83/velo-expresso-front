@@ -10,7 +10,7 @@ export default function TitleHeader() {
 
   return (
     <div className="flex items-center justify-between w-full p-2 lg:justify-center">
-      <h1 className="text-blue-ve text-shadow">Vélo-Expresso</h1>
+      <h1 className="text-ve-blue text-shadow">Vélo-Expresso</h1>
       <h2 className="lg:hidden" onClick={() => setMenu(!menu)}>
         {menu ? <ImMenu4 /> : <ImMenu3 />}
       </h2>
