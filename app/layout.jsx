@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className="min-h-screen">
+      <body className="relative min-h-screen">
         <div className="flex flex-col min-h-screen">
           <Header />
         <Toaster position="top-center" richColors expand={true} />
