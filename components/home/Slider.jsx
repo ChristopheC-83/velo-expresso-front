@@ -1,6 +1,5 @@
 "use client";
 
-
 import Image from "next/image";
 import { useState } from "react";
 import { sliders } from "../../lib/slider";
@@ -9,8 +8,6 @@ import { FaArrowCircleRight } from "react-icons/fa";
 
 export default function Slider() {
   const [sliderNumber, setSliderNumber] = useState(0);
-
-  console.log(sliders[sliderNumber].image + `-square.png`);
 
   function nextSlider() {
     if (sliderNumber < sliders.length - 1) {
@@ -46,15 +43,15 @@ export default function Slider() {
               <h2>{sliders[sliderNumber].title}</h2>
             </div>
 
-            
             <a
               href={sliders[sliderNumber].btnLink}
               className="absolute p-2 translate-x-1/2 border-4 border-white bottom-20 sm:bottom-36 w-[200px] sm:w-[300px] flexMid right-1/2 bg-neutral-900"
             >
-              <h2 className="text-2xl sm:text-3xl">{sliders[sliderNumber].btnText}</h2>
+              <h2 className="text-2xl sm:text-3xl">
+                {sliders[sliderNumber].btnText}
+              </h2>
             </a>
 
-            
             <div className="absolute flex justify-between text-4xl  sm:text-6xl translate-x-1/2 w-[200px] sm:w-[300px] bottom-4 sm:bottom-16 right-1/2 ">
               <FaArrowCircleLeft
                 onClick={prevSlider}
@@ -65,6 +62,7 @@ export default function Slider() {
                 className="overflow-hidden bg-black rounded-full cursor-pointer"
               />
             </div>
+            
           </div>
         </div>
       </div>

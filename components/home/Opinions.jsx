@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 import OpinionCard from "./components/OpinionCard";
+import OpinionInput from "./components/OpinionInput";
 
 export default function Opinions() {
   const [indexOpinion, setIndexOpinion] = useState(2);
@@ -43,7 +44,7 @@ export default function Opinions() {
               />
             </div>
             <div className="z-20">
-                <OpinionCard opinions={opinions} indexOpinion={indexOpinion} />
+              <OpinionCard opinions={opinions} indexOpinion={indexOpinion} />
             </div>
 
             <div className="z-10 scale-75 translate-x-[-110px]">
@@ -60,7 +61,7 @@ export default function Opinions() {
             </div>
           </div>
         </div>
-        <div className="flex justify-between text-4xl  sm:text-6xl  w-[300px] bottom-4 sm:bottom-16 right-1/2 text-white mt-4">
+        <div className="flex justify-between text-4xl  sm:text-6xl  w-[300px] right-1/2 text-white my-4">
           <FaArrowCircleLeft
             onClick={prevOpinion}
             className="overflow-hidden bg-black rounded-full cursor-pointer"
@@ -70,6 +71,7 @@ export default function Opinions() {
             className="overflow-hidden bg-black rounded-full cursor-pointer"
           />
         </div>
+        <OpinionInput />
       </div>
     </div>
   );
