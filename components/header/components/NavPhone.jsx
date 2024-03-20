@@ -4,14 +4,14 @@ import Link from "next/link";
 export default function NavPhone() {
   return (
     <div
-      className={`flex flex-col items-end ml-auto w-full menu-appear text-black bg-gradient-to-l from-neutral-200/90 to-neutral-200/20`}
+      className={`flex flex-col h-full items-end ml-auto w-full menu-appear text-black `}
     >
       {navlinks.map((link) => (
         <div key={link.id} className="p-6 pr-8 w-fit">
           <Link href={link.path}>
-            <div className="flex flex-col items-end justify-end">
-              <h3>{link.logo}</h3>
-              <h4>{link.label}</h4>
+            <div className="flex flex-col items-end justify-end scale-110">
+              <h2>{link.logo}</h2>
+              <h3>{link.label}</h3>
             </div>
           </Link>
         </div>

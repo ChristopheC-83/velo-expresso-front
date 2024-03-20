@@ -7,6 +7,7 @@ export default function Header() {
     <div className="w-full border-b-2 lg:block border-ve-blue bg-neutral-800 text-neutral-50">
       <Container>
         <TitleHeader />
+        {/* mnu ordinateur à partir de 1024px */}
         <div className="hidden lg:block">
           <NavScreen />
         </div>
