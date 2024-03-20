@@ -5,7 +5,7 @@ import Container from "../container/Container";
 
 export default function Brands() {
   return (
-      <div className="bg-neutral-800 min-h-[100px] mt-16 justify-center pb-4 md:py-6">
+      <div className="bg-neutral-800 min-h-[100px]  justify-center pb-4 md:py-6">
         <Container>
         <h2 className="py-4 text-center text-white">Nous leur faisons confiance :</h2>
         <div className="flex flex-wrap justify-center">

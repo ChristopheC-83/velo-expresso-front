@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen">
         <div className="flex flex-col min-h-screen">
           <Header />
-          <section className="lg:mt-32 grow">{children}</section>
+          <section className="grow">{children}</section>
           <Footer />
         </div>
       </body>

@@ -8,7 +8,7 @@ export default function Frames() {
   
   return (
     <Container>
-      <div className="min-h-screen sm:mt-8 md:mt-12">
+      <div className="min-h-screen lg:my-8 ">
         <div className="flex flex-col lg:gap-8 lg:flex-row lg:flex-wrap lg:justify-center">
           {frames.map((frame, index) => (
             <div key={frame.id} className={`relative lg:w-2/5 lg:h-[600px] lg:shadow-lg hover:scale-[1.01] lg:transition-all lg:duration-500 `}>
