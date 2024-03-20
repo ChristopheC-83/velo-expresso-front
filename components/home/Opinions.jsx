@@ -1,6 +1,6 @@
 "use client";
 
-import { opinions } from "@/lib/opinions";
+import { opinions } from "@/lib/opinions"; // prendre seulement si validate !!! true
 import { useState } from "react";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
