@@ -8,7 +8,7 @@ export default function HeaderImage({ image, title }) {
         <div className="relative w-full h-full text-white flexMid">
           <div className={`absolute inset-0 ${"bg-neutral-900/50"}`}></div>
           <div className="absolute top-[45%]  w-full">
-            <h2 className="text-3xl text-center sm:text-4xl md:text-5xl lg:text-7xl">{title}</h2>
+            <h2 className="text-3xl text-center sm:text-4xl md:text-5xl lg:text-7xl text-shadow-xl">{title}</h2>
           </div>
 
         </div>
