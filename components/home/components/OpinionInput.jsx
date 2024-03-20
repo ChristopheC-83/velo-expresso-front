@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { toast } from "sonner";
 
 export default function OpinionInput() {
   const [opinionForm, setOpinionForm] = useState(false);
@@ -9,8 +10,24 @@ export default function OpinionInput() {
 
 
   function prepareSendOpinion(formData) {
-    const name = formData.get("name");
-    const message = formData.get("message");
+    let name = formData.get("name");
+    let message = formData.get("message");
+    const messageLength = message.length;
+    console.log("messageLength", messageLength);
+
+    if(name.trim() === "" ){
+      name = "Anonyme";
+    }
+
+    if(message.trim() === ""){
+      toast.error("Votre message est vide !?!");
+      return;
+    }
+    
+    if(messageLength > 350){
+      toast.error(`Votre message est trop long ! 350 caractères max ! Pas ${messageLength} !` );
+      return;
+    }
 
     const newOpinion = {
       name: name,
@@ -19,11 +36,12 @@ export default function OpinionInput() {
       response: "",
       validate: false,
     };
+    confirm("Confirmez vous l'envoi ? Il sera publié après validation !");
     console.log(newOpinion);
 
     formComment.current.reset();
     setOpinionForm(false);
-    confirm("Votre avis a bien été envoyé, il sera publié après validation !");
+    toast.success("Votre avis a bien été envoyé !")
   }
   return (
     <div>
@@ -36,7 +54,7 @@ export default function OpinionInput() {
         A vous de partager votre expérience !
       </h3>
       {opinionForm && (
-        <form action={prepareSendOpinion} ref={formComment}>
+        <form action={prepareSendOpinion} ref={formComment} className="mx-2">
           <input
             type="text"
             name="name"

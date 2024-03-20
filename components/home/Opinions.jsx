@@ -29,15 +29,14 @@ export default function Opinions() {
     <div className="bg-neutral-800 min-h-[100px]  justify-center pb-4 md:py-6">
       <h2 className="py-4 text-center text-white">Ils nous font confiance :</h2>
       <div className="flex flex-col items-center justify-center w-full">
-        <div className="flex items-center justify-center">
-          <div className="flex items-center">
-            <div className="scale-50 translate-x-[280px]">
+        <div className="flex items-center justify-center w-full overflow-hidden">
+            <div className="hidden sm:block scale-50 translate-x-[320px] md:translate-x-[280px]">
               <OpinionCard
                 opinions={opinions}
                 indexOpinion={indexOpinion - 2}
               />
             </div>
-            <div className="z-10 scale-75 translate-x-[110px]">
+            <div className=" z-10 scale-75 translate-x-[195px]  sm:translate-x-[110px]">
               <OpinionCard
                 opinions={opinions}
                 indexOpinion={indexOpinion - 1}
@@ -47,19 +46,18 @@ export default function Opinions() {
               <OpinionCard opinions={opinions} indexOpinion={indexOpinion} />
             </div>
 
-            <div className="z-10 scale-75 translate-x-[-110px]">
+            <div className=" z-10 scale-75 translate-x-[-195px] sm:translate-x-[-110px]">
               <OpinionCard
                 opinions={opinions}
                 indexOpinion={indexOpinion + 1}
               />
             </div>
-            <div className="scale-50 translate-x-[-280px]">
+            <div className="hidden sm:block scale-50 translate-x-[-320px] md:translate-x-[-280px]">
               <OpinionCard
                 opinions={opinions}
                 indexOpinion={indexOpinion + 2}
               />
             </div>
-          </div>
         </div>
         <div className="flex justify-between text-4xl  sm:text-6xl  w-[300px] right-1/2 text-white my-4">
           <FaArrowCircleLeft

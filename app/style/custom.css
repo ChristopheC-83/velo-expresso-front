@@ -12,14 +12,14 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(23px, 20px + 1.65vw, 40px);
+  font-size: clamp(20px, 16px + 1.45vw, 30px);
   letter-spacing: calc(1px + 0.04vw);
   font-weight: bold;
   font-family: "Roboto", sans-serif;
 }
 
 h3 {
-  font-size: clamp(20px, 20px + 1vw, 29px);
+  font-size: clamp(16px, 14px + 1vw, 24px);
   letter-spacing: calc(1px + 0.02vw);
   font-weight: bold;
   font-family: "Roboto", sans-serif;
@@ -126,4 +126,8 @@ p {
 }
 .reseaux-logo .img-social:hover {
   filter: drop-shadow(2px 2px 8px #055d76) invert(1);
+}
+
+.transition-card {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }/*# sourceMappingURL=custom.css.map */
