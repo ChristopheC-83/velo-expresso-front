@@ -49,13 +49,13 @@ export default function Slider() {
             
             <a
               href={sliders[sliderNumber].btnLink}
-              className="absolute p-4 translate-x-1/2 border-4 border-white bottom-24 sm:bottom-40 w-[250px] sm:w-[300px] flexMid right-1/2 bg-neutral-900"
+              className="absolute p-2 translate-x-1/2 border-4 border-white bottom-20 sm:bottom-36 w-[200px] sm:w-[300px] flexMid right-1/2 bg-neutral-900"
             >
-              <h2>{sliders[sliderNumber].btnText}</h2>
+              <h2 className="text-2xl sm:text-3xl">{sliders[sliderNumber].btnText}</h2>
             </a>
 
             
-            <div className="absolute flex justify-between text-5xl  sm:text-6xl translate-x-1/2 w-[250px] sm:w-[300px] bottom-4 sm:bottom-16 right-1/2 ">
+            <div className="absolute flex justify-between text-4xl  sm:text-6xl translate-x-1/2 w-[200px] sm:w-[300px] bottom-4 sm:bottom-16 right-1/2 ">
               <FaArrowCircleLeft
                 onClick={prevSlider}
                 className="overflow-hidden bg-black rounded-full cursor-pointer"

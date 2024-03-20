@@ -1,6 +1,7 @@
 import Container from "@/components/container/Container";
 import Brands from "@/components/home/Brands";
 import Frames from "@/components/home/Frames";
+import Opinions from "@/components/home/Opinions";
 import Slider from "@/components/home/Slider";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Slider />
       <Frames/>
       <Brands/>
+      <Opinions/>
     </div>
   );
 }
