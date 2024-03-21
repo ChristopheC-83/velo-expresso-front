@@ -26,7 +26,7 @@ export default function OneBike({ params }) {
       />
       <Container>
         <h2 className="m-8 text-xl text-center font-weight sm:text-3xl ">
-          Le {bike.brand} {bike.model} en détails :
+          Le {bike.brand} {bike.model} en détails
         </h2>
         <div className="flex flex-col w-full max-w-[600px] mx-auto mb-4 px-2">
           <div className="one-bike-array bg-neutral-200">
