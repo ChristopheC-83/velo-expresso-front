@@ -3,6 +3,7 @@
 "use client";
 
 import HeaderImage from "@/components/HeaderImage";
+import CardBike from "@/components/bikes/CardBike";
 import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { bikesCatalogue } from "@/lib/bikes";
@@ -22,41 +23,9 @@ export default function page() {
           Passionné, amateur ou débutant, <br />
           nous avons le vélo qu'il vous faut.
         </h3>
-        <div className="grid w-full grid-cols-1 gap-2 p-2 sm:grid-cols-2 lg:grid-cols-3 sm:gap-3 md:gap-4 sm:p-3 lg:p-4">
+        <div className="grid grid-cols-1 gap-2 p-2 max-w-[300px] mx-auto sm:grid-cols-2  sm:max-w-[650px] md:grid-cols-3 md:max-w-[1000px] lg:grid-cols-4 lg:max-w-[1200px] sm:gap-3 md:gap-4 sm:p-3 lg:p-4 mb-6">
           {bikes.map((bike) => (
-            <Link
-              href={`/bike/${bike?.id}`}
-              key={bike?.id}
-              className={`flex flex-col justify-between h-[100%] border-2 overflow-hidden  w-full ${
-                bike?.promo && "promo"
-              }`}
-            >
-              <div className="relative w-full p-2 overflow-hidden aspect-square">
-                <Image
-                  src={bike?.picture}
-                  alt={bike?.model}
-                  fill
-                  className="object-cover w-10/12 overflow-hidden duration-300 tr ansition-all hover:scale-105 aspect-auto"
-                />
-              </div>
-              <div className="flex flex-col items-start p-2">
-                <h3>{bike?.typeBike}</h3>
-                <h4 className="mb-2 text-center font-weight">
-                  {bike?.brand} {bike?.model}
-                </h4>
-
-                {!bike.promo ? (
-                  <h3>{bike?.price} €</h3>
-                ) : (
-                  <div className="flex items-center justify-between w-full">
-                    <h4 className="text-neutral-500">
-                      <s>{bike?.price} €</s>
-                    </h4>{" "}
-                    <h2 className="text-red-600">{bike?.pricePromo} €</h2>
-                  </div>
-                )}
-              </div>
-            </Link>
+            <CardBike key={bike.id} bike={bike} />
           ))}
         </div>
       </Container>
