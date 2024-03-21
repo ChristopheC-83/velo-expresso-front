@@ -26,7 +26,7 @@ export default function Social() {
   return (
     <div className="w-full py-12">
       <Container>
-        <h2 className="mb-4 text-center">Nous suivre ? C'est par là !</h2>
+        <h2 className="mb-4 text-center">Nous suivre ? C'est par ici !</h2>
 
         <div className="reseaux-logo">
           {networks.map((network, index) => (

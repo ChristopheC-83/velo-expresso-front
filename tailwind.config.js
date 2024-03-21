@@ -9,9 +9,12 @@ module.exports = {
     extend: {
       colors: {
         ve: {
-          "blue": "#0BBBEC",
-          "dark": "#1D1D1B",
+          blue: "#0BBBEC",
+          dark: "#1D1D1B",
         },
+      },
+      screens: {
+        xs: "480px",
       },
     },
   },
