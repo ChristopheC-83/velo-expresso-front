@@ -5,9 +5,7 @@ import { FaPlusCircle } from "react-icons/fa";
 export default function CardBike({ bike }) {
   return (
     <div
-      className={`flex flex-col justify-start h-[100%] border-2 overflow-hidden  w-full ${
-        bike?.promo && "promo"
-      }`}
+      className={`flex flex-col justify-start h-[100%] border-2 overflow-hidden  w-full`}
     >
       <div className="relative w-full p-2 overflow-hidden aspect-square">
         <Image
@@ -38,16 +36,8 @@ export default function CardBike({ bike }) {
           </div>
         </div>
 
-        {!bike.promo ? (
           <h3>{bike?.price} €</h3>
-        ) : (
-          <div className="flex items-center justify-between w-full">
-            <h3 className="text-neutral-500">
-              <s>{bike?.price} €</s>
-            </h3>{" "}
-            <h3 className="text-2xl text-red-600">{bike?.pricePromo} €</h3>
-          </div>
-        )}
+       
       </div>
     </div>
   );
