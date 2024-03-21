@@ -32,7 +32,12 @@ export default function Slider() {
   return (
     <div className="w-full  h-[100vw] lg:h-[90vh] bg-ve-dark ">
       <div
-        className={`relative w-full h-[100vw] lg:h-[90vh] bg-no-repeat bg-top aspect-square lg:aspect-[16/9] overflow-hidden bg-cover `}
+        className={`relative w-full bg-no-repeat bg-${
+          sliders[sliderNumber].style ? sliders[sliderNumber].style : "cover"
+        } bg-${
+          sliders[sliderNumber].alignX
+        }
+        } h-[90vh]`}
         key={sliders[sliderNumber].id}
         style={{ backgroundImage: `url(${sliders[sliderNumber].image})` }}
       >
@@ -55,15 +60,14 @@ export default function Slider() {
                 {sliders[sliderNumber].btnText}
               </h2>
             </a>
-
-            <div className="absolute flex justify-between text-4xl  sm:text-6xl translate-x-1/2 w-[200px] sm:w-[300px] bottom-4 sm:bottom-16 right-1/2 ">
+            <div className="absolute flex justify-between translate-x-1/2 w-[300px] bottom-16 right-1/2 ">
               <FaArrowCircleLeft
                 onClick={prevSlider}
-                className="overflow-hidden bg-black rounded-full cursor-pointer"
+                className="cursor-pointer"
               />
               <FaArrowCircleRight
                 onClick={nextSlider}
-                className="overflow-hidden bg-black rounded-full cursor-pointer"
+                className="cursor-pointer"
               />
             </div>
             
