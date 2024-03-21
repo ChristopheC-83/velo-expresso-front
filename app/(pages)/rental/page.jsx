@@ -24,23 +24,25 @@ export default function page() {
             Nous allons voir tout ça ensemble.
           </h2>
 
-          <div className="flex flex-wrap justify-center border-2 border-black w-11/12 mx-auto my-6 md:w-full max-w-[950px]">
+          <div className="flex flex-wrap justify-center border-4 border-black w-11/12 mx-auto my-6 lg:w-full max-w-[950px]">
             <div className="flex w-full bg-ve-blue/50 font-weight">
-              <p className="flex items-center justify-center p-2 border border-black grow w-[8%]">Article</p>
-              <p className="flex items-center justify-center p-2 border border-black grow w-[8%]">Demi-journée</p>
-              <p className="flex items-center justify-center p-2 border border-black grow w-[8%]">Journée</p>
-              <p className="flex items-center justify-center p-2 border border-black grow w-[8%]">Journée Supp.</p>
-              <p className="flex items-center justify-center p-2 border border-black grow w-[8%]">Semaine</p>
+              <p className="timing-rental w-[30%]">Article</p>
+              <p className="timing-rental w-[15%]">Demi-journée</p>
+              <p className="timing-rental w-[15%]">Journée</p>
+              <p className="timing-rental w-[15%]">Journée Supp.</p>
+              <p className="timing-rental w-[15%]">Semaine</p>
             </div>
-              {rental.map((item) => (
-                <div key={item.id} className="flex w-full">
-                  <p className="flex items-center justify-start p-2 border border-black grow w-[8%] bg-ve-blue/50">{item.item}</p>
-                  <p className="flex items-center justify-end p-2 pr-6 border border-black grow w-[8%]">{item.demiJournee} €</p>
-                  <p className="flex items-center justify-end p-2 pr-6 border border-black grow w-[8%]">{item.journee} €</p>
-                  <p className="flex items-center justify-end p-2 pr-6 border border-black grow w-[8%]">{item.journeeSupp} €</p>
-                  <p className="flex items-center justify-end p-2 pr-6 border border-black grow w-[8%]">{item.semaine} €</p>
-                </div>
-              ))}
+            {rental.map((item) => (
+              <div key={item.id} className="flex w-full">
+                <p className="price-rental w-[30%] bg-ve-blue/50">
+                  {item.item}
+                </p>
+                <p className="price-rental w-[15%]">{item.demiJournee} €</p>
+                <p className="price-rental w-[15%]">{item.journee} €</p>
+                <p className="price-rental w-[15%]">{item.journeeSupp} €</p>
+                <p className="price-rental w-[15%]">{item.semaine} €</p>
+              </div>
+            ))}
           </div>
         </div>
         <div className="w-full mx-auto mb-6 sm:w-4/5 md:w-3/5">
