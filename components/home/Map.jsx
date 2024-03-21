@@ -5,7 +5,7 @@ export default function Map() {
       <h2 className="py-4 text-center text-white">
         Et venir nous voir, par là :
       </h2>
-      <div className="flex flex-col items-center justify-center w-full">
+      <div className="flex flex-col items-center justify-center w-full mb-6">
         <div className="xs:hidden">
           <iframe
             src={urlIframe}
