@@ -20,10 +20,10 @@
   position: relative;
   height: 0;
 }
-/* .map-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-} */
+
+
+/* présentation d'un vélo */
+
+.one-bike-array{
+@apply flex items-center justify-between p-2 px-4 border border-black
+}

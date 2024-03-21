@@ -19,11 +19,11 @@ export default function Atelier() {
             vélo.
           </h2>
 
-          <div className="flex flex-wrap justify-center w-11/12 gap-4 pt-4 mx-auto my-6 sm:gap-x-6 md:gap-x-8 md:w-full">
+          <div className="flex flex-wrap justify-center w-full gap-2 pt-4 mx-auto my-6 sm:gap-x-2 md:gap-x-4 md:w-full">
             {categoriesMeca.map((categorie) => (
               <div
                 key={categorie.id}
-                className="w-11/12 h-fit text-center border-x-2 border-t-2 border-black md:w-[350px]"
+                className="w-full h-fit text-center border-x-2 border-t-2 border-black xs:w-[350px]"
               >
                 <div className="flex flex-col">
                   <h3 className="py-4 uppercase border-b-2 border-black bg-ve-blue/50">

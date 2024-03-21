@@ -24,7 +24,7 @@ export default function page() {
             Nous allons voir tout ça ensemble.
           </h2>
 
-          <div className="flex flex-wrap justify-center border-4 border-black w-11/12 mx-auto my-6 lg:w-full max-w-[950px]">
+          <div className="flex flex-wrap justify-center border-4 border-black w-full mx-auto my-6 lg:w-full max-w-[950px]">
             <div className="flex w-full bg-ve-blue/50 font-weight">
               <p className="timing-rental w-[30%]">Article</p>
               <p className="timing-rental w-[15%]">Demi-journée</p>
@@ -34,7 +34,7 @@ export default function page() {
             </div>
             {rental.map((item) => (
               <div key={item.id} className="flex w-full">
-                <p className="price-rental w-[30%] bg-ve-blue/50">
+                <p className="price-rental  w-[30%] bg-ve-blue/50">
                   {item.item}
                 </p>
                 <p className="price-rental w-[15%]">{item.demiJournee} €</p>

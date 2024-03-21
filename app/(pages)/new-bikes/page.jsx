@@ -14,7 +14,6 @@ import { useState } from "react";
 export default function NewBikes() {
   const bikes = bikesCatalogue.filter((bike) => bike.new === true);
   const [showText, setShowText] = useState(false);
-  console.log("bikes", bikes);
 
   return (
     <div className="relative w-full">
