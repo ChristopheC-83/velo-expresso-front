@@ -1,3 +1,7 @@
+// affichage des avis clients
+//  pourrait contenir un slider smoothy plutot que les changement instantanés mis en place ici (des librairies existent !!!) 
+// alimenté par les client puis validé/répondu par le propriétaire du magasin
+
 "use client";
 
 import { opinions } from "@/lib/opinions"; // prendre seulement si validate !!! true

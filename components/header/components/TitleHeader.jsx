@@ -1,3 +1,6 @@
+// navigation dans le menu sur pc
+// gestion du hamburger pour le menu smartphone
+
 "use client";
 
 import { useState } from "react";

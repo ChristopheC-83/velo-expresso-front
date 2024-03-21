@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
+// navigation dans le menu sur pc
+
 import Link from "next/link";
 import { navlinks } from "@/lib/navlinks";
 

@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 // page des tarifs location
+// alimenté par le propriétaire du magasin
+
 "use client";
 
 import HeaderImage from "@/components/HeaderImage";

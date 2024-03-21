@@ -1,3 +1,5 @@
+// image d'entête d'un page
+
 export default function HeaderImage({ image, title, subtitle }) {
   return (
     <div className="w-full  h-[100vw] lg:h-[90vh] bg-ve-dark ">

@@ -1,3 +1,6 @@
+// cercle avec le bleu rotatif + logo des marques
+// alimenté par le propriétaire du magasin
+
 import { brands } from "@/lib/brands";
 import Image from "next/image";
 import Link from "next/link";

@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 // Un vélo détaillé
+// la DB des vélos est alimentée par le propriétaire du magasin
+
 "use client";
 
 import HeaderImage from "@/components/HeaderImage";
@@ -41,15 +43,11 @@ export default function OneBike({ params }) {
           </div>
           <div className="one-bike-array bg-neutral-200">
             <h3>Neuf ?</h3>
-            <h4 className="font-normal">
-              {bike.new ? "oui" : "occasion"}
-            </h4>
+            <h4 className="font-normal">{bike.new ? "oui" : "occasion"}</h4>
           </div>
           <div className="one-bike-array ">
             <h3>Type :</h3>
-            <h4 className="font-normal">
-              {bike.typeBike}
-            </h4>
+            <h4 className="font-normal">{bike.typeBike}</h4>
           </div>
           <div className="one-bike-array bg-neutral-200">
             <h3>Taille du Cadre :</h3>
@@ -83,16 +81,15 @@ export default function OneBike({ params }) {
             <h3>Roues :</h3>
             <h4 className="font-normal">{bike.wheels}</h4>
           </div>
-          
-              <div className="one-bike-array bg-neutral-200">
-                <h3>Electrique :</h3>
-                <h4 className="font-normal">{bike.electric ? "oui" : "non"} </h4>
-              </div>
-              <div className="one-bike-array">
-                <h3>Détail :</h3>
-                <h4 className="font-normal">{bike.detail}</h4>
-              </div>
-       
+
+          <div className="one-bike-array bg-neutral-200">
+            <h3>Electrique :</h3>
+            <h4 className="font-normal">{bike.electric ? "oui" : "non"} </h4>
+          </div>
+          <div className="one-bike-array">
+            <h3>Détail :</h3>
+            <h4 className="font-normal">{bike.detail}</h4>
+          </div>
 
           {!bike.promo ? (
             <div className="one-bike-array bg-neutral-200">

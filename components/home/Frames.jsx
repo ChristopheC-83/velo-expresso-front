@@ -1,17 +1,22 @@
+// sur smartphone, les blocs sont en colonne les uns au dessous des autres
+// sur desktop, les blocs sont en ligne, 2 par ligne
+//  ce sont des cadre de communication pour les sections du site
+// alimenté par le propriétaire du magasin
+
 import Image from "next/image";
 import Container from "../container/Container";
 import { frames } from "@/lib/frames";
-// sur smartphone, les bloc sont en colonne les uns au dessous des autres
-// sur desktop, les blocs sont en ligne, 2 par ligne
-export default function Frames() {
 
-  
+export default function Frames() {
   return (
     <Container>
       <div className="min-h-screen lg:my-8 ">
         <div className="flex flex-col lg:gap-8 lg:flex-row lg:flex-wrap lg:justify-center">
           {frames.map((frame, index) => (
-            <div key={frame.id} className={`relative lg:w-2/5 lg:h-[600px] lg:shadow-lg hover:scale-[1.01] lg:transition-all lg:duration-500 `}>
+            <div
+              key={frame.id}
+              className={`relative lg:w-2/5 lg:h-[600px] lg:shadow-lg hover:scale-[1.01] lg:transition-all lg:duration-500 `}
+            >
               <Image
                 src={frame.image}
                 alt={frame.title}

@@ -1,3 +1,5 @@
+// navigation dans le menu sur smartphone
+
 import { navlinks } from "@/lib/navlinks";
 import Link from "next/link";
 

@@ -1,3 +1,7 @@
+// slider d'accueil
+// peut contenir des lien et/ou infos
+// alimenté par le propriétaire du magasin
+
 "use client";
 
 import Image from "next/image";

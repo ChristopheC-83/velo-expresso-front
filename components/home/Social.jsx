@@ -1,4 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
+// pour accéder aux réseaux sociaux du magasin
+
+
 import Image from "next/image";
 import Link from "next/link";
 import Container from "../container/Container";
