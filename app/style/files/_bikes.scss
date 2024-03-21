@@ -1,0 +1,22 @@
+.promo {
+  position: relative;
+
+  &::before {
+    content: "PROMO";
+    position: absolute;
+    transform-origin: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    top: 0;
+    left: 0;
+    transform: rotate(-45deg) translateY(-30px) translateX(-70px);
+    color:#f1f1f1;
+    background-color: crimson;
+    z-index: 1;
+  }
+}
