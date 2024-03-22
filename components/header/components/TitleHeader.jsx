@@ -19,7 +19,11 @@ export default function TitleHeader() {
       </Link>
       {/* pour l'icone hamburger du menu sous les  1024px*/}
       <h2 className="lg:hidden" onClick={() => setMenu(!menu)}>
-        {menu ? <ImMenu4 /> : <ImMenu3 />}
+        {menu ? <div className="text-4xl">
+          <ImMenu4 />
+        </div> : <div className="text-4xl">
+          <ImMenu3 />
+        </div>}
       </h2>
       {menu && (
         <div
