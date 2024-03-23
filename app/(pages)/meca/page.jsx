@@ -2,12 +2,29 @@
 // page des tarifs atelier
 "use client";
 
+import Loader from "@/app/loading";
 import HeaderImage from "@/components/HeaderImage";
 import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
+import { useWorkshop } from "@/hooks/useWorkshop";
 import { categoriesMeca, meca } from "@/lib/meca";
 
 export default function Atelier() {
+  const { data: workshop, isFetching, error } = useWorkshop();
+  console.log(workshop);
+  const categories = workshop?.categoriesWorkshop
+  const tasks = workshop?.tasksWorkshop
+
+  console.log(categories);
+  console.log(tasks);
+
+  if (isFetching) {
+    return <Loader />;
+  }
+  if (error) {
+    return <div>Erreur : {error.message}</div>;
+  }
+
   return (
     <div className="relative w-full">
       <ArrowToTop />
@@ -54,11 +71,12 @@ export default function Atelier() {
             lorsque nous verrons le vélo en magasin.
           </h5>
           <h5 className="mb-2">
-            * Une intervention peut mettre à jour une/des défectuosité(s). Dans ce
-            cas, un nouveau devis vous sera adressé.
+            * Une intervention peut mettre à jour une/des défectuosité(s). Dans
+            ce cas, un nouveau devis vous sera adressé.
           </h5>
           <h5 className="mb-2">
-            * Les cables internes pouvant prendre du temps à être changés, un supplément s'élevant jusqu'à 90€ pourra être ajouté à la facture.
+            * Les cables internes pouvant prendre du temps à être changés, un
+            supplément s'élevant jusqu'à 90€ pourra être ajouté à la facture.
           </h5>
         </div>
       </Container>
