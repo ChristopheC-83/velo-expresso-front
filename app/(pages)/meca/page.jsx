@@ -13,8 +13,8 @@ import he from "he";
 export default function Atelier() {
   const { data: workshop, isFetching, error } = useWorkshop();
   console.log(workshop);
-  const categories = workshop?.categoriesWorkshop
-  const tasks = workshop?.tasksWorkshop
+  const categories = workshop?.categoriesWorkshop;
+  const tasks = workshop?.tasksWorkshop;
 
   console.log(categories);
   console.log(tasks);
@@ -83,6 +83,4 @@ export default function Atelier() {
       </Container>
     </div>
   );
-
- 
 }
