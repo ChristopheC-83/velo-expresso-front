@@ -34,7 +34,7 @@ export default function Atelier() {
         <div className="w-full">
           <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
             Retrouvez ici les tarifs et les forfaits pour l'entretien de votre
-            vélo.
+            vélo : 
           </h2>
 
           <div className="flex flex-wrap justify-center w-full gap-2 pt-4 mx-auto my-6 sm:gap-x-2 md:gap-x-4 md:w-full">
