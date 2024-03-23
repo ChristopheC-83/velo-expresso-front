@@ -8,6 +8,7 @@ import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useWorkshop } from "@/hooks/useWorkshop";
 import { categoriesMeca, meca } from "@/lib/meca";
+import he from "he";
 
 export default function Atelier() {
   const { data: workshop, isFetching, error } = useWorkshop();
@@ -37,25 +38,25 @@ export default function Atelier() {
           </h2>
 
           <div className="flex flex-wrap justify-center w-full gap-2 pt-4 mx-auto my-6 sm:gap-x-2 md:gap-x-4 md:w-full">
-            {categoriesMeca.map((categorie) => (
+            {categories.map((categorie) => (
               <div
-                key={categorie.id}
+                key={categorie.cat_id}
                 className="w-full h-fit text-center border-x-2 border-t-2 border-black xs:w-[350px]"
               >
                 <div className="flex flex-col">
                   <h3 className="py-4 uppercase border-b-2 border-black bg-ve-blue/50">
-                    {categorie.categorie}
+                    {categorie.cat_name}
                   </h3>
 
-                  {meca
-                    .filter((item) => item.categorie === categorie.categorie)
+                  {tasks
+                    .filter((task) => task.task_category === categorie.cat_name)
                     .map((operation) => (
                       <div
-                        key={operation.id}
+                        key={operation.task_id}
                         className="flex items-center justify-between w-full p-2 border-b-2 border-black"
                       >
-                        <p>{operation.opération}</p>
-                        <p>{operation.prix} €</p>
+                        <p>{he.decode(operation.task_name)}</p>
+                        <p>{operation.task_price} €</p>
                       </div>
                     ))}
                 </div>
@@ -82,4 +83,6 @@ export default function Atelier() {
       </Container>
     </div>
   );
+
+ 
 }
