@@ -10,22 +10,19 @@ import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useRentals } from "@/hooks/useRentals";
 import { rental } from "@/lib/rental";
-
 import he from "he";
 
 export default function Rentals() {
   const { data: rentals, isFetching, error } = useRentals();
   console.log(rentals);
   const rentalsItems = rentals?.rentalsItems;
-  const rentalsText = rentals?.textUnderRentals;
+  const rentalsText = rentals?.textUnderRentals.text_rental;
   console.log(rentalsText);
-  const texteDécodé = he.decode(rentalsText?.text_rental);
-
-  const decodeHtml = (html) => {
-    const txt = document.createElement("textarea");
-    txt.innerHTML = html;
-    return txt.value;
-  };
+  let decryptedText=""
+  if(rentalsText){
+    decryptedText= he.decode(rentalsText);
+}
+  
 
   if (isFetching) {
     return <Loader />;
@@ -73,10 +70,14 @@ export default function Rentals() {
         </div>
         <div className="w-full mx-auto mb-6 sm:w-4/5 md:w-3/5">
           <hr />
+          {decryptedText &&
+          
           <div
             className="mt-6"
-            dangerouslySetInnerHTML={{ __html: texteDécodé }}
+            dangerouslySetInnerHTML={{ __html: decryptedText }}
           />
+          
+          }
         </div>
       </Container>
     </div>
