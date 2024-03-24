@@ -9,7 +9,6 @@ import HeaderImage from "@/components/HeaderImage";
 import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useRentals } from "@/hooks/useRentals";
-import { rental } from "@/lib/rental";
 import he from "he";
 
 export default function Rentals() {
@@ -71,7 +70,7 @@ export default function Rentals() {
           {decryptedText &&
           
           <div
-            className="mt-6"
+            className="mt-4"
             dangerouslySetInnerHTML={{ __html: decryptedText }}
           />
           
