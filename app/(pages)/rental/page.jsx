@@ -14,10 +14,8 @@ import he from "he";
 
 export default function Rentals() {
   const { data: rentals, isFetching, error } = useRentals();
-  console.log(rentals);
   const rentalsItems = rentals?.rentalsItems;
   const rentalsText = rentals?.textUnderRentals.text_rental;
-  console.log(rentalsText);
   let decryptedText=""
   if(rentalsText){
     decryptedText= he.decode(rentalsText);
