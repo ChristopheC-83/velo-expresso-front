@@ -4,12 +4,36 @@
 
 "use client";
 
+import Loader from "@/app/loading";
 import HeaderImage from "@/components/HeaderImage";
 import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
+import { useRentals } from "@/hooks/useRentals";
 import { rental } from "@/lib/rental";
 
-export default function page() {
+import he from "he";
+
+export default function Rentals() {
+  const { data: rentals, isFetching, error } = useRentals();
+  console.log(rentals);
+  const rentalsItems = rentals?.rentalsItems;
+  const rentalsText = rentals?.textUnderRentals;
+  console.log(rentalsText);
+  const texteDécodé = he.decode(rentalsText?.text_rental);
+
+  const decodeHtml = (html) => {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  };
+
+  if (isFetching) {
+    return <Loader />;
+  }
+  if (error) {
+    return <div>Erreur : {error.message}</div>;
+  }
+
   return (
     <div className="relative w-full">
       <ArrowToTop />
@@ -34,31 +58,25 @@ export default function page() {
               <p className="timing-rental w-[15%]">Journée Supp.</p>
               <p className="timing-rental w-[15%]">Semaine</p>
             </div>
-            {rental.map((item) => (
-              <div key={item.id} className="flex w-full">
+            {rentalsItems.map((item) => (
+              <div key={item.rental_id} className="flex w-full">
                 <p className="price-rental  w-[30%] bg-ve-blue/50">
-                  {item.item}
+                  {he.decode(item.item)}
                 </p>
-                <p className="price-rental w-[15%]">{item.demiJournee} €</p>
-                <p className="price-rental w-[15%]">{item.journee} €</p>
-                <p className="price-rental w-[15%]">{item.journeeSupp} €</p>
-                <p className="price-rental w-[15%]">{item.semaine} €</p>
+                <p className="price-rental w-[15%]">{item.half_day} €</p>
+                <p className="price-rental w-[15%]">{item.day} €</p>
+                <p className="price-rental w-[15%]">{item.extra_day} €</p>
+                <p className="price-rental w-[15%]">{item.week} €</p>
               </div>
             ))}
           </div>
         </div>
         <div className="w-full mx-auto mb-6 sm:w-4/5 md:w-3/5">
-          <h5 className="mb-2">
-            * Le tarif d'une location sera déduit du prix d'un vélo neuf acheté
-            dans le mois qui suit la location.
-          </h5>
-          <h5 className="mb-2">
-            * Horaires de location : 9h-19h et du mardi au samedi.
-          </h5>
-          <h5 className="mb-2">
-            * Des tarifs de groupe ( 6 personnes ou plus ) sont disponibles sur
-            demande.
-          </h5>
+          <hr />
+          <div
+            className="mt-6"
+            dangerouslySetInnerHTML={{ __html: texteDécodé }}
+          />
         </div>
       </Container>
     </div>
