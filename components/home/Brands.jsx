@@ -5,16 +5,30 @@ import { brands } from "@/lib/brands";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "../container/Container";
+import { usePartners } from "@/hooks/usePartners";
+import Loader from "@/app/loading";
 
 export default function Brands() {
+  const {data:partners, isFetching, error} = usePartners();
+  console.log(partners?.allPartners);
+  const allPartners = partners?.allPartners;
+  const imgPath = "https://dbve.barpat.fun/public/assets/images/partners/"
+
+  if (isFetching) {
+    return <Loader />;
+  }
+  if (error) {
+    return <div>Erreur : {error.message}</div>;
+  }
+  
   return (
       <div className="bg-neutral-800 min-h-[100px]  justify-center pb-4 md:py-6">
         <Container>
         <h2 className="py-4 text-center text-white">Nous leur faisons confiance :</h2>
         <div className="flex flex-wrap justify-center">
-          {brands.map((brand) => (
+          {allPartners.map((brand) => (
             <div
-              key={brand.id}
+              key={brand.id_partner}
               className="m-1.5 w-[145px] h-[145px] sm:w-[180px] sm:h-[180px] md:w-[230px] md:h-[230px] shrink-0 partenaire-ext lg:m-12 "
             >
               <div className="absolute bgc-rotate flexMid"></div>
@@ -25,7 +39,7 @@ export default function Brands() {
                 className="w-full h-full flexMid"
               >
                 <Image
-                  src={brand.logo}
+                  src={imgPath+brand.logo}
                   alt={brand.name}
                   width={400}
                   height={400}
