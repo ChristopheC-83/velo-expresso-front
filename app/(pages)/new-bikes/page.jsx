@@ -2,18 +2,35 @@
 // les vélos neufs
 "use client";
 
+import Loader from "@/app/loading";
 import HeaderImage from "@/components/HeaderImage";
 import CardBike from "@/components/bikes/CardBike";
 import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
+import { useBikes } from "@/hooks/useBikes";
 import { bikesCatalogue } from "@/lib/bikes";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function NewBikes() {
-  const bikes = bikesCatalogue.filter((bike) => bike.new === true);
+  // const bikes = bikesCatalogue.filter((bike) => bike.new === true);
   const [showText, setShowText] = useState(false);
+  const { data: bikesApi, isFetching, isLoading, error } = useBikes();
+  const bikes = bikesApi?.bikes.filter((bike) => bike.bike_new === "new");
+  if (bikes) {
+    console.log(bikes);
+  }
+
+  if (isFetching) {
+    return <Loader />;
+  }
+  if (isLoading) {
+    return <Loader />;
+  }
+  if (error) {
+    return <div>Erreur : {error.message}</div>;
+  }
 
   return (
     <div className="relative w-full">
@@ -52,14 +69,16 @@ export default function NewBikes() {
         )}
 
         <div className="grid grid-cols-1 gap-2 p-2 max-w-[300px] mx-auto sm:grid-cols-2  sm:max-w-[650px] md:grid-cols-3 md:max-w-[1000px] lg:grid-cols-4 lg:max-w-[1200px] sm:gap-3 md:gap-4 sm:p-3 lg:p-4 mb-6">
-          {bikes.map((bike) => (
-            <CardBike key={bike.id} bike={bike} />
+          {bikes?.map((bike) => (
+            <CardBike key={bike?.bike_id} bike={bike} />
           ))}
         </div>
         <h4 className="py-4 font-normal text-center">
-          Pour se lancer ou trouver une bonne affaire :<br/>
+          Pour se lancer ou trouver une bonne affaire :<br />
           <Link href="/used-bikes">
-            <u><b>nos vélos d'occasion !</b></u>
+            <u>
+              <b>nos vélos d'occasion !</b>
+            </u>
           </Link>
         </h4>
       </Container>

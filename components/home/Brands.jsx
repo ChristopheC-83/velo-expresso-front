@@ -9,10 +9,10 @@ import { usePartners } from "@/hooks/usePartners";
 import Loader from "@/app/loading";
 
 export default function Brands() {
-  const {data:partners, isFetching, error} = usePartners();
+  const { data: partners, isFetching, error } = usePartners();
   console.log(partners?.allPartners);
   const allPartners = partners?.allPartners;
-  const imgPath = "https://dbve.barpat.fun/public/assets/images/partners/"
+  const imgPath = "https://dbve.barpat.fun/public/assets/images/partners/";
 
   if (isFetching) {
     return <Loader />;
@@ -20,11 +20,13 @@ export default function Brands() {
   if (error) {
     return <div>Erreur : {error.message}</div>;
   }
-  
+
   return (
-      <div className="bg-neutral-800 min-h-[100px]  justify-center pb-4 md:py-6">
-        <Container>
-        <h2 className="py-4 text-center text-white">Nous leur faisons confiance :</h2>
+    <div className="bg-neutral-800 min-h-[100px]  justify-center pb-4 md:py-6">
+      <Container>
+        <h2 className="py-4 text-center text-white">
+          Nous leur faisons confiance :
+        </h2>
         <div className="flex flex-wrap justify-center">
           {allPartners.map((brand) => (
             <div
@@ -39,7 +41,7 @@ export default function Brands() {
                 className="w-full h-full flexMid"
               >
                 <Image
-                  src={imgPath+brand.logo}
+                  src={imgPath + brand.logo}
                   alt={brand.name}
                   width={400}
                   height={400}
@@ -49,7 +51,7 @@ export default function Brands() {
             </div>
           ))}
         </div>
-    </Container>
-      </div>
-      );
+      </Container>
+    </div>
+  );
 }

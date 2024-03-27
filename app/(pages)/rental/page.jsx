@@ -15,11 +15,10 @@ export default function Rentals() {
   const { data: rentals, isFetching, error } = useRentals();
   const rentalsItems = rentals?.rentalsItems;
   const rentalsText = rentals?.textUnderRentals.text_rental;
-  let decryptedText=""
-  if(rentalsText){
-    decryptedText= he.decode(rentalsText);
-}
-  
+  let decryptedText = "";
+  if (rentalsText) {
+    decryptedText = he.decode(rentalsText);
+  }
 
   if (isFetching) {
     return <Loader />;
@@ -67,14 +66,12 @@ export default function Rentals() {
         </div>
         <div className="w-full mx-auto mb-6 sm:w-4/5 md:w-3/5">
           <hr />
-          {decryptedText &&
-          
-          <div
-            className="mt-4"
-            dangerouslySetInnerHTML={{ __html: decryptedText }}
-          />
-          
-          }
+          {decryptedText && (
+            <div
+              className="mt-4"
+              dangerouslySetInnerHTML={{ __html: decryptedText }}
+            />
+          )}
         </div>
       </Container>
     </div>
