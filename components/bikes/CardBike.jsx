@@ -35,7 +35,7 @@ export default function CardBike({ bike }) {
           </div>
         </div>
 
-        {!bike.promo ? (
+        {!bike.bike_promo ? (
           <h3>{bike?.bike_price} €</h3>
         ) : (
           <div className="flex items-center justify-between w-full">

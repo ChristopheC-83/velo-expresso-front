@@ -14,9 +14,8 @@ import { bikesCatalogue } from "@/lib/bikes";
 import Image from "next/image";
 
 export default function OneBike({ params }) {
-  
   const imgPath = "https://dbve.barpat.fun/public/assets/images/bikes/";
-  
+
   let { id } = params;
   id = parseInt(id, 10);
   // const bike = bikesCatalogue.filter((bike) => bike?.id === id)[0];
@@ -65,53 +64,68 @@ export default function OneBike({ params }) {
           </div>
           <div className="one-bike-array bg-neutral-200">
             <h3>Neuf ?</h3>
-            <h4 className="font-normal">{bike?.bike_new ? "oui" : "occasion"}</h4>
+            <h4 className="font-normal">
+              {bike?.bike_new ? "oui" : "occasion"}
+            </h4>
           </div>
-          <div className="one-bike-array ">
-            <h3>Type :</h3>
-            <h4 className="font-normal">{bike?.bike_type}</h4>
-          </div>
-          <div className="one-bike-array bg-neutral-200">
-            <h3>Taille du Cadre :</h3>
-            <h4 className="font-normal">{bike?.bike_size}</h4>
-          </div>
-          <div className="one-bike-array">
-            <h3>Suspension :</h3>
-            <h4 className="font-normal">{bike?.bike_suspension}</h4>
-          </div>
-          <div className="one-bike-array bg-neutral-200">
-            <h3>Nombre de vitesses :</h3>
-            <h4 className="font-normal">{bike?.bike_speeds_number}</h4>
-          </div>
-          <div className="one-bike-array">
-            <h3>Transmission :</h3>
-            <h4 className="font-normal">{bike?.bike_transmission}</h4>
-          </div>
-          <div className="one-bike-array bg-neutral-200">
-            <h3>Dimension des roues</h3>
-            <h4 className="font-normal">{bike?.bike_wheels_dim} "</h4>
-          </div>
-          <div className="one-bike-array">
-            <h3>Roues :</h3>
-            <h4 className="font-normal">{bike?.bike_wheels}</h4>
-          </div>
-          <div className="one-bike-array bg-neutral-200">
-            <h3>Freins</h3>
-            <h4 className="font-normal">{bike?.bike_brake} "</h4>
-          </div>
-          <div className="one-bike-array">
-            <h3>Roues :</h3>
-            <h4 className="font-normal">{bike?.bike_wheels}</h4>
-          </div>
+          {bike?.bike_type && (
+            <div className="one-bike-array ">
+              <h3>Type :</h3>
+              <h4 className="font-normal">{bike?.bike_type}</h4>
+            </div>
+          )}
+          {bike?.bike_size && (
+            <div className="one-bike-array bg-neutral-200">
+              <h3>Taille du Cadre :</h3>
+              <h4 className="font-normal">{bike?.bike_size}</h4>
+            </div>
+          )}
+          {bike?.bike_suspension && (
+            <div className="one-bike-array">
+              <h3>Suspension :</h3>
+              <h4 className="font-normal">{bike?.bike_suspension}</h4>
+            </div>
+          )}
+          {bike?.bike_speeds_number && (
+            <div className="one-bike-array bg-neutral-200">
+              <h3>Nombre de vitesses :</h3>
+              <h4 className="font-normal">{bike?.bike_speeds_number}</h4>
+            </div>
+          )}
+          {bike?.bike_transmission && (
+            <div className="one-bike-array">
+              <h3>Transmission :</h3>
+              <h4 className="font-normal">{bike?.bike_transmission}</h4>
+            </div>
+          )}
+          {bike?.bike_wheels_dim && (
+            <div className="one-bike-array bg-neutral-200">
+              <h3>Dimension des roues</h3>
+              <h4 className="font-normal">{bike?.bike_wheels_dim}"</h4>
+            </div>
+          )}
+          {bike?.bike_wheels && (
+            <div className="one-bike-array">
+              <h3>Roues :</h3>
+              <h4 className="font-normal">{bike?.bike_wheels}</h4>
+            </div>
+          )}
+          {bike?.bike_brake && (
+            <div className="one-bike-array bg-neutral-200">
+              <h3>Freins</h3>
+              <h4 className="font-normal">{bike?.bike_brake}</h4>
+            </div>
+          )}
 
-          <div className="one-bike-array bg-neutral-200">
+          <div className="one-bike-array ">
             <h3>Electrique :</h3>
             <h4 className="font-normal">{bike?.bike_elec ? "oui" : "non"} </h4>
           </div>
-          <div className="one-bike-array">
+
+          {bike?.bike_elec_detail && <div className="one-bike-array bg-neutral-200">
             <h3>Détail :</h3>
             <h4 className="font-normal">{bike?.bike_elec_detail}</h4>
-          </div>
+          </div>}
 
           {!bike?.bike_promo ? (
             <div className="one-bike-array bg-neutral-200">
@@ -141,7 +155,12 @@ export default function OneBike({ params }) {
         </div>
       </Container>
       <div className="relative w-full my-6 flexMid">
-        <Image alt={bike?.bike_model} src={imgPath + bike?.bike_picture} width={900} height={600} />
+        <Image
+          alt={bike?.bike_model}
+          src={imgPath + bike?.bike_picture}
+          width={900}
+          height={600}
+        />
       </div>
     </div>
   );
