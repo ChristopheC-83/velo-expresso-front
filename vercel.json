@@ -1,9 +1,0 @@
-{
-    "build": {
-      "env": {
-        "DATABASE_URL": "mysql://u256533777_ve_front:*Thierry&Ugh'sOn2Lapierre*@89.116.147.103/u256533777_ve_from_front?schema=public"
-      },
-      "command": "prisma generate && next build"
-    }
-  }
-  
