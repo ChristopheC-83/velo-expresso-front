@@ -77,7 +77,7 @@ export default function OpinionInput() {
           setOpinionForm(!opinionForm);
         }}
       >
-        A vous de partager votre expérience !!!
+        A vous de partager votre expérience !
       </h3>
       {opinionForm && (
         <form action={prepareSendOpinion} ref={formComment} className="mx-2">
