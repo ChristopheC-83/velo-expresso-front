@@ -1,47 +1,73 @@
 "use client";
 
+import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 
 export default function OpinionInput() {
   const [opinionForm, setOpinionForm] = useState(false);
+  const router = useRouter();
   const formComment = useRef();
 
-
+  async function sendOpinion(opinion) {
+    // console.log("opinion : ", opinion);
+    try {
+      const response = await axios.post("/api/opinions", opinion, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.status === 200) {
+        throw new Error("Erreur lors de l'envoi de l'avis !!!");
+      }
+      router.push("/");
+      toast.success("Votre avis a bien été envoyé !");
+    } catch {
+      toast.error("Erreur lors de l'envoi de l'avis !");
+    }
+  }
 
   function prepareSendOpinion(formData) {
     let name = formData.get("name");
     let message = formData.get("message");
     const messageLength = message.length;
-    console.log("messageLength", messageLength);
+    // console.log("messageLength", messageLength);
 
-    if(name.trim() === "" ){
+    if (name.trim() === "") {
       name = "Anonyme";
     }
 
-    if(message.trim() === ""){
+    if (message.trim() === "") {
       toast.error("Votre message est vide !?!");
       return;
     }
-    
-    if(messageLength > 350){
-      toast.error(`Votre message est trop long ! 350 caractères max ! Pas ${messageLength} !` );
+
+    if (messageLength < 5 ) {
+      toast.error(
+        `Votre message est trop court ! Au moins 5 caractères 😅`
+      );
+      return;
+    }
+    if (messageLength > 350) {
+      toast.error(
+        `Votre message est trop long ! 350 caractères max ! Pas ${messageLength} !`
+      );
       return;
     }
 
     const newOpinion = {
       name: name,
       message: message,
-      date: new Date().toISOString().split("T")[0],
       response: "",
-      validate: false,
+      validated: false,
+      createdAt: new Date().toISOString().split("T")[0],
     };
     confirm("Confirmez vous l'envoi ? Il sera publié après validation !");
-    console.log(newOpinion);
-
+    sendOpinion(newOpinion);
     formComment.current.reset();
     setOpinionForm(false);
-    toast.success("Votre avis a bien été envoyé !")
+    // toast.success("Votre avis a bien été envoyé !");
   }
   return (
     <div>

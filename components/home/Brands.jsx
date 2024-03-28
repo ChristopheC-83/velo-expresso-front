@@ -10,7 +10,7 @@ import Loader from "@/app/loading";
 
 export default function Brands() {
   const { data: partners, isFetching, error } = usePartners();
-  console.log(partners?.allPartners);
+  // console.log(partners?.allPartners);
   const allPartners = partners?.allPartners;
   const imgPath = "https://dbve.barpat.fun/public/assets/images/partners/";
 
