@@ -10,9 +10,13 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 import OpinionCard from "./components/OpinionCard";
 import OpinionInput from "./components/OpinionInput";
+import { useOpinions } from "@/hooks/useOpinions";
+import Loader from "@/app/loading";
 
 export default function Opinions() {
   const [indexOpinion, setIndexOpinion] = useState(2);
+  const { data: allOpinions, isFetching, error } = useOpinions();
+  const opinions = allOpinions?.validatedOpinions;
 
   function nextOpinion() {
     if (indexOpinion < opinions.length - 1) {
@@ -28,6 +32,14 @@ export default function Opinions() {
     } else {
       setIndexOpinion(opinions.length - 1);
     }
+  }
+
+
+  if (isFetching) {
+    return <Loader />;
+  }
+  if (error) {
+    return <div>Erreur : {error.message}</div>;
   }
   return (
     <div className="bg-neutral-800 min-h-[100px]  justify-center pb-4 md:py-6">
