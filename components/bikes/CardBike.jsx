@@ -5,7 +5,7 @@ import { FaPlusCircle } from "react-icons/fa";
 export default function CardBike({ bike }) {
   const imgPath = "https://dbve.barpat.fun/public/assets/images/bikes/";
   return (
-    <div
+    <Link href={`/bike/${bike?.bike_id}`}
       className={`flex flex-col justify-start h-[100%] border-2 overflow-hidden  w-full ${
         bike?.bike_promo && "promo"
       }`}
@@ -48,6 +48,6 @@ export default function CardBike({ bike }) {
           </div>
         )}
       </div>
-    </div>
+    </Link>
   );
 }
