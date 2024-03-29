@@ -16,7 +16,7 @@ export default function Slider() {
   const [sliderNumber, setSliderNumber] = useState(0);
   const {data:sliders, isFetching, error} = useSlider();
   const allSliders = sliders?.allSliders;
-  // console.log(sliders);
+  console.log(allSliders?.length);
   const imgPath = "https://dbve.barpat.fun/public/assets/images/slider/";
   
 
@@ -72,6 +72,7 @@ export default function Slider() {
               </h2>
             </a></>}
 
+            {allSliders?.length>1 &&  (
             <div className="absolute flex justify-between text-4xl  sm:text-6xl translate-x-1/2 w-[200px] sm:w-[300px] bottom-4 sm:bottom-16 right-1/2 ">
               <FaArrowCircleLeft
                 onClick={prevSlider}
@@ -81,7 +82,7 @@ export default function Slider() {
                 onClick={nextSlider}
                 className="overflow-hidden bg-black rounded-full cursor-pointer"
               />
-            </div>
+            </div>)}
             
           </div>
         </div>
