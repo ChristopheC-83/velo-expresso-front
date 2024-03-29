@@ -4,12 +4,12 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import { Toaster } from "sonner";
 import QueryProvider from "@/providers/query-provider";
+<link rel="icon" href="/favicon.ico" sizes="any" />
 
 export const metadata = {
   title: "Vélo Expresso",
   description: "Votre magasin de vélo dans la Vaunage, à Congénies.",
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
