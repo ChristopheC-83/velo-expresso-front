@@ -43,13 +43,13 @@ export default function Frames() {
               />
               {/* overlay si image trop clair */}
               <div
-                className={`absolute inset-0 bg-neutral-900 bg-opacity-30`}
+                className={`absolute inset-0 bg-neutral-900 bg-opacity-50`}
               ></div>
               <div className="absolute inset-0 flex flex-col items-center justify-end pb-16 text-white gap-y-4 lg:justify-between lg:py-12">
                 <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
                   {he.decode(frame?.title)}
                 </h2>
-                <p className="w-1/2 text-center">{he.decode(frame?.text)}</p>
+                <h5 className="w-1/2 text-center">{he.decode(frame?.text)}</h5>
                 <Link
                   href={frame?.btnLink}
                   className="px-4 py-2 mt-4 font-semibold text-white border-2 border-white bg-neutral-900/50 "
