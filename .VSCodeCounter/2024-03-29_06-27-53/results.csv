@@ -1,0 +1,63 @@
+"filename", "language", "JavaScript", "JavaScript JSX", "Markdown", "JSON", "Prisma", "JSON with Comments", "CSS", "SCSS", "comment", "blank", "total"
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\.eslintrc.json", "JSON with Comments", 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\(pages)\bike\[id]\page.jsx", "JavaScript JSX", 0, 151, 0, 0, 0, 0, 0, 0, 4, 13, 168
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\(pages)\legal-notice\page.jsx", "JavaScript JSX", 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\(pages)\meca\page.jsx", "JavaScript JSX", 0, 77, 0, 0, 0, 0, 0, 0, 2, 8, 87
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\(pages)\new-bikes\page.jsx", "JavaScript JSX", 0, 79, 0, 0, 0, 0, 0, 0, 3, 6, 88
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\(pages)\rental\page.jsx", "JavaScript JSX", 0, 70, 0, 0, 0, 0, 0, 0, 3, 7, 80
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\(pages)\used-bikes\page.jsx", "JavaScript JSX", 0, 86, 0, 0, 0, 0, 0, 0, 3, 6, 95
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\api\opinions\route.js", "JavaScript", 23, 0, 0, 0, 0, 0, 0, 0, 1, 5, 29
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\layout.jsx", "JavaScript JSX", 0, 26, 0, 0, 0, 0, 0, 0, 0, 3, 29
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\loading.jsx", "JavaScript JSX", 0, 8, 0, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\not-found.jsx", "JavaScript JSX", 0, 7, 0, 0, 0, 0, 0, 0, 0, 1, 8
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\page.jsx", "JavaScript JSX", 0, 22, 0, 0, 0, 0, 0, 0, 0, 4, 26
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\style\custom.css", "CSS", 0, 0, 0, 0, 0, 0, 142, 0, 0, 18, 160
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\style\custom.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 5
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\style\files\_bikes.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 21, 0, 4, 25
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\style\files\_brands.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 32, 1, 4, 37
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\style\files\_polices.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 44, 3, 4, 51
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\style\files\_social.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 18, 0, 4, 22
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\style\files\_utilities.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 35, 0, 4, 39
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\app\style\global.css", "CSS", 0, 0, 0, 0, 0, 0, 18, 0, 3, 8, 29
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\HeaderImage.jsx", "JavaScript JSX", 0, 24, 0, 0, 0, 0, 0, 0, 1, 2, 27
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\bikes\CardBike.jsx", "JavaScript JSX", 0, 51, 0, 0, 0, 0, 0, 0, 0, 3, 54
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\bikes\CardUsedBike.jsx", "JavaScript JSX", 0, 38, 0, 0, 0, 0, 0, 0, 0, 3, 41
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\container\Container.jsx", "JavaScript JSX", 0, 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\footer\Footer.jsx", "JavaScript JSX", 0, 40, 0, 0, 0, 0, 0, 0, 0, 2, 42
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\header\Header.jsx", "JavaScript JSX", 0, 15, 0, 0, 0, 0, 0, 0, 2, 3, 20
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\header\components\NavPhone.jsx", "JavaScript JSX", 0, 20, 0, 0, 0, 0, 0, 0, 1, 3, 24
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\header\components\NavScreen.jsx", "JavaScript JSX", 0, 18, 0, 0, 0, 0, 0, 0, 2, 7, 27
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\header\components\TitleHeader.jsx", "JavaScript JSX", 0, 31, 0, 0, 0, 0, 0, 0, 3, 5, 39
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\home\Brands.jsx", "JavaScript JSX", 0, 50, 0, 0, 0, 0, 0, 0, 3, 5, 58
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\home\Frames.jsx", "JavaScript JSX", 0, 43, 0, 0, 0, 0, 0, 0, 5, 3, 51
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\home\Map.jsx", "JavaScript JSX", 0, 60, 0, 0, 0, 0, 0, 0, 2, 3, 65
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\home\Opinions.jsx", "JavaScript JSX", 0, 81, 0, 0, 0, 0, 0, 0, 3, 9, 93
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\home\Slider.jsx", "JavaScript JSX", 0, 63, 0, 0, 0, 0, 0, 0, 3, 10, 76
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\home\Social.jsx", "JavaScript JSX", 0, 47, 0, 0, 0, 0, 0, 0, 2, 6, 55
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\home\components\ArrowToTop.jsx", "JavaScript JSX", 0, 34, 0, 0, 0, 0, 0, 0, 0, 6, 40
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\home\components\OpinionCard.jsx", "JavaScript JSX", 0, 31, 0, 0, 0, 0, 0, 0, 0, 3, 34
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\components\home\components\OpinionInput.jsx", "JavaScript JSX", 0, 97, 0, 0, 0, 0, 0, 0, 3, 10, 110
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\hooks\useBikes.js", "JavaScript", 8, 0, 0, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\hooks\useOpinions.js", "JavaScript", 8, 0, 0, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\hooks\usePartners.js", "JavaScript", 8, 0, 0, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\hooks\useRentals.js", "JavaScript", 8, 0, 0, 0, 0, 0, 0, 0, 0, 1, 9
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\hooks\useWorkshop.js", "JavaScript", 8, 0, 0, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\jsconfig.json", "JSON with Comments", 0, 0, 0, 0, 0, 7, 0, 0, 0, 2, 9
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\lib\bikes.js", "JavaScript", 178, 0, 0, 0, 0, 0, 0, 0, 0, 2, 180
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\lib\brands.js", "JavaScript", 38, 0, 0, 0, 0, 0, 0, 0, 0, 1, 39
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\lib\connect.js", "JavaScript", 11, 0, 0, 0, 0, 0, 0, 0, 0, 4, 15
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\lib\frames.js", "JavaScript", 47, 0, 0, 0, 0, 0, 0, 0, 0, 2, 49
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\lib\meca.js", "JavaScript", 99, 0, 0, 0, 0, 0, 0, 0, 0, 2, 101
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\lib\navlinks.js", "JavaScript", 23, 0, 0, 0, 0, 0, 0, 0, 2, 3, 28
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\lib\opinions.js", "JavaScript", 42, 0, 0, 0, 0, 0, 0, 0, 0, 3, 45
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\lib\rental.js", "JavaScript", 34, 0, 0, 0, 0, 0, 0, 0, 0, 2, 36
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\lib\slider.js", "JavaScript", 18, 0, 0, 0, 0, 0, 0, 0, 5, 4, 27
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\next.config.mjs", "JavaScript", 15, 0, 0, 0, 0, 0, 0, 0, 1, 2, 18
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\package-lock.json", "JSON", 0, 0, 0, 5297, 0, 0, 0, 0, 0, 1, 5298
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\package.json", "JSON", 0, 0, 0, 34, 0, 0, 0, 0, 0, 1, 35
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\postcss.config.js", "JavaScript", 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\prisma\schema.prisma", "Prisma", 0, 0, 0, 0, 16, 0, 0, 0, 5, 6, 27
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\providers\query-provider.jsx", "JavaScript JSX", 0, 8, 0, 0, 0, 0, 0, 0, 0, 4, 12
+"c:\Users\Kiketdule\Kiki\Codage\Formation Rocket\velo-expresso-front\tailwind.config.js", "JavaScript", 21, 0, 0, 0, 0, 0, 0, 0, 1, 1, 23
+"Total", "-", 595, 1285, 0, 5331, 16, 10, 160, 155, 67, 238, 7857
