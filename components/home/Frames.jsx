@@ -14,7 +14,7 @@ import Link from "next/link";
 export default function Frames() {
   const {data:frames, isFetching, error} = useFrames();
   const allFrames = frames?.allFrames;
-  console.log(allFrames);
+  // console.log(allFrames);
   
   const imgPath = "https://dbve.barpat.fun/public/assets/images/frames/";
 

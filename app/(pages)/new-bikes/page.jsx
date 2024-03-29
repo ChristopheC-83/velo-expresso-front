@@ -18,9 +18,9 @@ export default function NewBikes() {
   const [showText, setShowText] = useState(false);
   const { data: bikesApi, isFetching, isLoading, error } = useBikes();
   const bikes = bikesApi?.bikes.filter((bike) => bike.bike_new === "new");
-  if (bikes) {
-    console.log(bikes);
-  }
+  // if (bikes) {
+  //   console.log(bikes);
+  // }
 
   if (isFetching) {
     return <Loader />;

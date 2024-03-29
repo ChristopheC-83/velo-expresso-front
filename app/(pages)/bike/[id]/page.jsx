@@ -23,9 +23,9 @@ export default function OneBike({ params }) {
   const { data: bikesApi, isFetching, isLoading, error } = useBikes();
   const bike = bikesApi?.bikes.filter((bike) => bike?.bike_id == id)[0];
 
-  if (bike) {
-    console.log(bike);
-  }
+  // if (bike) {
+  //   console.log(bike);
+  // }
 
   if (isFetching) {
     return <Loader />;

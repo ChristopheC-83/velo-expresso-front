@@ -16,12 +16,11 @@ export default function Slider() {
   const [sliderNumber, setSliderNumber] = useState(0);
   const {data:sliders, isFetching, error} = useSlider();
   const allSliders = sliders?.allSliders;
-  console.log(sliders);
+  // console.log(sliders);
   const imgPath = "https://dbve.barpat.fun/public/assets/images/slider/";
   
 
   function nextSlider() {
-    console.log("top")
     if (sliderNumber < allSliders.length - 1) {
       setSliderNumber(sliderNumber + 1);
     } else {
@@ -30,7 +29,6 @@ export default function Slider() {
   }
 
   function prevSlider() {
-    console.log("down")
     if (sliderNumber > 0) {
       setSliderNumber(sliderNumber - 1);
     } else {
