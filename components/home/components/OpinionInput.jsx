@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import axios from "axios";
@@ -7,8 +8,14 @@ import { toast } from "sonner";
 
 export default function OpinionInput() {
   const [opinionForm, setOpinionForm] = useState(false);
+  const [checkedCGU, setCheckedCGU] = useState(false);
   const router = useRouter();
   const formComment = useRef();
+
+  function handleCheckboxChange(event){
+    setCheckedCGU(event.target.checked);
+  }
+  
 
   async function sendOpinion(opinion) {
     // console.log("opinion : ", opinion);
@@ -33,6 +40,11 @@ export default function OpinionInput() {
     let message = formData.get("message");
     const messageLength = message.length;
     // console.log("messageLength", messageLength);
+
+    if(!checkedCGU){
+      toast.danger("Vous devez accepter les Conditions Générales d'Utilisation pour envoyer votre avis.");
+      return;
+    }
 
     if (name.trim() === "") {
       name = "Anonyme";
@@ -72,7 +84,7 @@ export default function OpinionInput() {
   return (
     <div>
       <h3
-        className="my-4 text-center text-white transition-all duration-300 cursor-pointer hover:text-neutral-500"
+        className="w-full p-2 my-4 text-center text-white transition-all duration-300 border-2 border-white rounded-full hover:text-black hover:bg-neutral-100 hover:border-black"
         onClick={() => {
           setOpinionForm(!opinionForm);
         }}
@@ -84,7 +96,7 @@ export default function OpinionInput() {
           <input
             type="text"
             name="name"
-            placeholder="Votre nom"
+            placeholder="Votre nom, pseudo... ou rien !"
             className="w-full p-2 my-2 rounded"
           />
           <textarea
@@ -93,12 +105,20 @@ export default function OpinionInput() {
             cols="30"
             rows="10"
             className="w-full p-2 rounded"
-            placeholder="Votre avis en 350 caractères max !"
+            placeholder="Votre avis en 350 caractères max ! Ce message sera publié après validation et ne sert qu'à donner votre avis sur votre expérience avec le magasin. Pour toutes questions, merci de nous contacter directement par mail ou téléphone.
+            "
           ></textarea>
+
+          <div className="w-full my-3">
+            <input type="checkbox" className="border-gray-300 rounded size-4" 
+        checked={checkedCGU}
+        onChange={handleCheckboxChange}/>
+            <label className="ml-2 text-neutral-100">J'ai lu et j'accepte les <a href="/cgu" className="text-blue-600">Conditions Générales d'Utilisation</a>. </label>
+          </div>
 
           <button
             type="submit"
-            className="w-full p-2 my-4 text-white transition-all duration-300 border-2 border-white rounded-full hover:text-black hover:bg-neutral-100 hover:border-black"
+            className="w-full p-2 my-4 text-white transition-all duration-300 border-2 border-white rounded-full disabled:pointer-events-none hover:text-black hover:bg-neutral-100 hover:border-black disabled:opacity-50 disabled:cursor-not-allowed " disabled={!checkedCGU}
           >
             <h4>Envoyer mon avis</h4>
           </button>

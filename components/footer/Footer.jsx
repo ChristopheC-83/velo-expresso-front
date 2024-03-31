@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col justify-between md:items-center md:flex-row ">
             <div className="p-4 rounded-xl bg-neutral-800/60">
-              <h4><Link href="/legal-notice">Mentions Légales</Link></h4>
+              <h4><Link href="/cgu">Mentions Légales</Link></h4>
             </div>
             <h5>&copy; COPYRIGHT VELO-EXPRESSO - 2024</h5>
           </div>
