@@ -45,17 +45,19 @@ export default function UsedBikes() {
         </h3>
 
         <div className="flex items-center justify-center">
+        <div className="w-fit">
           <h3 className="m-4 text-xl text-center font-weight sm:text-3xl ">
             Nous avons des vélos d'occasion !
           </h3>
           <div
-            onClick={() => {
-              setShowText(!showText);
-            }}
-            className="text-xl cursor-pointer"
-          >
-            {showText ? "⏫" : "⏬"}
-          </div>
+              onClick={() => {
+                setShowText(!showText);
+              }}
+              className="cursor-pointer text-end text-ve-blue"
+            >
+              {!showText && "lire la suite... ⏬"}
+            </div>
+            </div>
         </div>
         {showText && (
           <div className="mx-auto w-fit">
@@ -72,6 +74,14 @@ export default function UsedBikes() {
             <p className="py-2 text-center">
               <b>Venez les tester directement en magasin 😉</b>
             </p>
+            <div
+              onClick={() => {
+                setShowText(!showText);
+              }}
+              className="cursor-pointer text-end text-ve-blue"
+            >
+              {showText && "masquer ⏫"}
+            </div>
           </div>
         )}
         <div className="grid grid-cols-1 gap-2 p-2 max-w-[300px] mx-auto sm:grid-cols-2  sm:max-w-[650px] md:grid-cols-3 md:max-w-[1000px] lg:grid-cols-4 lg:max-w-[1200px] sm:gap-3 md:gap-4 sm:p-3 lg:p-4 mb-6">
@@ -80,8 +90,7 @@ export default function UsedBikes() {
           ))}
         </div>
         <h4 className="py-4 font-normal text-center">
-          Vous savez exactement ce que vous voulez ? <br /> Vous voulez vous
-          lancer sur un{" "}
+          Vous savez exactement ce que vous voulez ? <br /> Vous voulez inaugurer votre {" "}
           <Link href="/new-bikes">
             <u>
               <b>vélo neuf !</b>

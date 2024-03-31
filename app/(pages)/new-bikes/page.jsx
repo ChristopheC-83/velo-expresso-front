@@ -11,7 +11,9 @@ import { useBikes } from "@/hooks/useBikes";
 import { bikesCatalogue } from "@/lib/bikes";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+
 
 export default function NewBikes() {
   // const bikes = bikesCatalogue.filter((bike) => bike.new === true);
@@ -21,7 +23,7 @@ export default function NewBikes() {
   // if (bikes) {
   //   console.log(bikes);
   // }
-
+  
   if (isFetching) {
     return <Loader />;
   }
@@ -41,14 +43,16 @@ export default function NewBikes() {
           Passionné, amateur ou débutant ?{" "}
         </h3>
         <div className="flex items-center justify-center">
-          <h3> nous avons le vélo qu'il vous faut.</h3>
-          <div
-            onClick={() => {
-              setShowText(!showText);
-            }}
-            className="text-xl cursor-pointer"
-          >
-            {showText ? "⏫" : "⏬"}
+          <div className="w-fit">
+            <h3> nous avons le vélo qu'il vous faut.</h3>
+            <div
+              onClick={() => {
+                setShowText(!showText);
+              }}
+              className="cursor-pointer text-end text-ve-blue"
+            >
+              {!showText && "lire la suite... ⏬"}
+            </div>
           </div>
         </div>
         {showText && (
@@ -65,6 +69,14 @@ export default function NewBikes() {
                 magasin 😎.
               </b>
             </p>
+            <div
+              onClick={() => {
+                setShowText(!showText);
+              }}
+              className="cursor-pointer text-end text-ve-blue"
+            >
+              {showText && "masquer ⏫"}
+            </div>
           </div>
         )}
 
