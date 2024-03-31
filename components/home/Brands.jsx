@@ -30,7 +30,7 @@ export default function Brands() {
         <div className="flex flex-wrap justify-center">
           {allPartners.map((brand) => (
             <div
-              key={brand.id_partner}
+              key={brand.id}
               className="m-1.5 w-[145px] h-[145px] sm:w-[180px] sm:h-[180px] md:w-[230px] md:h-[230px] shrink-0 partenaire-ext lg:m-12 "
             >
               <div className="absolute bgc-rotate flexMid"></div>

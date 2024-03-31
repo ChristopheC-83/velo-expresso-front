@@ -16,7 +16,7 @@ export default function Slider() {
   const [sliderNumber, setSliderNumber] = useState(0);
   const {data:sliders, isFetching, error} = useSlider();
   const allSliders = sliders?.allSliders;
-  console.log(allSliders?.length);
+  // console.log(allSliders?.length);
   const imgPath = "https://dbve.barpat.fun/public/assets/images/slider/";
   
 

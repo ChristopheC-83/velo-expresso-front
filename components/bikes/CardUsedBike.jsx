@@ -27,9 +27,9 @@ export default function CardBike({ bike }) {
           </div>
           <div className="flex flex-col items-center">
             <p className="pb-2 text-xs text-neutral-500">En savoir plus</p>
-            <Link className="pr-2 text-3xl" href={`/bike/${bike?.bike_id}`}>
+            <p className="pr-2 text-3xl" >
               <FaPlusCircle />
-            </Link>
+            </p>
           </div>
         </div>
 

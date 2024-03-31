@@ -52,10 +52,10 @@ export default function Rentals() {
               <p className="timing-rental w-[15%]">Semaine</p>
             </div>
             {rentalsItems.map((item) => (
-              <div key={item.rental_id} className="flex w-full">
-                <p className="price-rental  w-[30%] bg-ve-blue/50">
-                  {he.decode(item.item)}
-                </p>
+              <div key={item.id} className="flex w-full">
+                 <div className="price-rental  w-[30%] bg-ve-blue/50 ">
+                  <p className="mr-auto">{he.decode(item.name)}</p>
+                </div>
                 <p className="price-rental w-[15%]">{item.half_day} €</p>
                 <p className="price-rental w-[15%]">{item.day} €</p>
                 <p className="price-rental w-[15%]">{item.extra_day} €</p>

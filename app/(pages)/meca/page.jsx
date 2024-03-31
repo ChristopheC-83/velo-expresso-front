@@ -37,24 +37,24 @@ export default function Atelier() {
           </h2>
 
           <div className="flex flex-wrap justify-center w-full gap-2 pt-4 mx-auto my-6 sm:gap-x-2 md:gap-x-4 md:w-full">
-            {categories.map((categorie) => (
+            {categories.map((categorie, index) => (
               <div
-                key={categorie.cat_id}
+                key={categorie.id}
                 className="w-full h-fit text-center border-x-2 border-t-2 border-black xs:w-[350px]"
               >
                 <div className="flex flex-col">
                   <h3 className="py-4 uppercase border-b-2 border-black bg-ve-blue/50">
-                    {categorie.cat_name}
+                    {categorie.name}
                   </h3>
 
                   {tasks
-                    .filter((task) => task.task_category === categorie.cat_name)
+                    .filter((task) => task.task_category === categorie.name)
                     .map((operation) => (
                       <div
-                        key={operation.task_id}
+                        key={operation.id}
                         className="flex items-center justify-between w-full p-2 border-b-2 border-black"
                       >
-                        <p>{he.decode(operation.task_name)}</p>
+                        <p>{he.decode(operation.name)}</p>
                         <p>{operation.task_price} €</p>
                       </div>
                     ))}
