@@ -7,8 +7,8 @@ import QueryProvider from "@/providers/query-provider";
 <link rel="icon" href="/favicon.ico" sizes="any" />
 
 export const metadata = {
-  title: "Vélo Expresso",
-  description: "Votre magasin de vélo dans la Vaunage, à Congénies.",
+  title: "Vélo Expresso | Accueil",
+  description: "Vélo Express, votre magasin de vélos dans la Vaunage, à Congénies. Vtt, vélos électriques, vae, vélos enfants, vélos neufs et d'occasion.",
 };
 export default function RootLayout({ children }) {
   return (
