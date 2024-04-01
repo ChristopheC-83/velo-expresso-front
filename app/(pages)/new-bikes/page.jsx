@@ -9,11 +9,10 @@ import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useBikes } from "@/hooks/useBikes";
 import { bikesCatalogue } from "@/lib/bikes";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-
 
 export default function NewBikes() {
   // const bikes = bikesCatalogue.filter((bike) => bike.new === true);
@@ -23,7 +22,7 @@ export default function NewBikes() {
   // if (bikes) {
   //   console.log(bikes);
   // }
-  
+
   if (isFetching) {
     return <Loader />;
   }
@@ -39,50 +38,93 @@ export default function NewBikes() {
       <ArrowToTop />
       <HeaderImage image="/images/rental/rental.jpg" title="Les Vélos" />
       <Container>
-        <h3 className="m-4 text-xl text-center font-weight sm:text-3xl ">
-          Passionné, amateur ou débutant ?{" "}
-        </h3>
-        <div className="flex items-center justify-center">
-          <div className="w-fit">
-            <h3> nous avons le vélo qu'il vous faut.</h3>
-            <div
-              onClick={() => {
-                setShowText(!showText);
-              }}
-              className="cursor-pointer text-end text-ve-blue"
-            >
-              {!showText && "lire la suite... ⏬"}
+        <motion.div
+          initial={{
+            opacity: 0.15,
+            x: -250,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 0.5,
+              delay: -0.15,
+              ease: "easeInOut",
+            },
+          }}
+        >
+          <h3 className="m-4 text-xl text-center font-weight sm:text-3xl ">
+            Passionné, amateur ou débutant ?{" "}
+          </h3>
+          <div className="flex items-center justify-center">
+            <div className="w-fit">
+              <h3> nous avons le vélo qu'il vous faut.</h3>
+              <div
+                onClick={() => {
+                  setShowText(!showText);
+                }}
+                className="cursor-pointer text-end text-ve-blue"
+              >
+                {!showText && "lire la suite... ⏬"}
+              </div>
             </div>
           </div>
-        </div>
-        {showText && (
-          <div className="mx-auto w-fit">
-            <p>Parce qu'il sera exactement comme vous le souhaitez.</p>
-            <p>Parce qu'il bénéniciera des dernières innovations matériel.</p>
-            <p>Parce qu'il sera garanti.</p>
-            <p>
-              Un vélo neuf est un investissement dans votre pratique du vélo !
-            </p>
-            <p className="py-2 text-center">
-              <b>
-                Venez les tester ou voir les disponibilités sur commende en
-                magasin 😎.
-              </b>
-            </p>
-            <div
-              onClick={() => {
-                setShowText(!showText);
-              }}
-              className="cursor-pointer text-end text-ve-blue"
+        </motion.div>
+        <AnimatePresence>
+          {showText && (
+            <motion.div
+              animate={{ y: 0, opacity: 1 }}
+              initial={{ y: -50, opacity: 0 }}
             >
-              {showText && "masquer ⏫"}
-            </div>
-          </div>
-        )}
+              <div className="mx-auto w-fit">
+                <p>Parce qu'il sera exactement comme vous le souhaitez.</p>
+                <p>
+                  Parce qu'il bénéniciera des dernières innovations matériel.
+                </p>
+                <p>Parce qu'il sera garanti.</p>
+                <p>
+                  Un vélo neuf est un investissement dans votre pratique du vélo
+                  !
+                </p>
+                <p className="py-2 text-center">
+                  <b>
+                    Venez les tester ou voir les disponibilités sur commande en
+                    magasin 😎.
+                  </b>
+                </p>
+                <div
+                  onClick={() => {
+                    setShowText(!showText);
+                  }}
+                  className="cursor-pointer text-end text-ve-blue"
+                >
+                  {showText && "masquer ⏫"}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <div className="grid grid-cols-1 gap-2 p-2 max-w-[300px] mx-auto sm:grid-cols-2  sm:max-w-[650px] md:grid-cols-3 md:max-w-[1000px] lg:grid-cols-4 lg:max-w-[1200px] sm:gap-3 md:gap-4 sm:p-3 lg:p-4 mb-6">
           {bikes?.map((bike) => (
-            <CardBike key={bike?.bike_id} bike={bike} />
+            <motion.div
+              key={bike?.bike_id}
+              initial={{
+                opacity: 0.5,
+                y: 60,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.75,
+                  delay: -0.15,
+                  ease: "easeInOut",
+                },
+              }}
+            >
+              <CardBike bike={bike} />
+            </motion.div>
           ))}
         </div>
         <h4 className="py-4 font-normal text-center">

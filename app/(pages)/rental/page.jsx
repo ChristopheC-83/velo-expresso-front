@@ -10,6 +10,7 @@ import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useRentals } from "@/hooks/useRentals";
 import he from "he";
+import {motion} from "framer-motion";
 
 export default function Rentals() {
   const { data: rentals, isFetching, error } = useRentals();
@@ -33,15 +34,31 @@ export default function Rentals() {
       <HeaderImage image="/images/rental/rental.jpg" title="La location" />
       <Container>
         <div className="w-full">
-          <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
-            Une demi-journée ? Une semaine ?
-          </h2>
-          <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
-            Un VTT ? Un vélo électrique ?
-          </h2>
-          <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
-            Nous allons voir tout ça ensemble.
-          </h2>
+            <motion.div 
+             initial={{
+              opacity: 0.15,
+              x: -250,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.5,
+                delay: -0.15,
+                ease: "easeInOut",
+              },
+            }}
+            >
+              <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
+                Une demi-journée ? Une semaine ?
+              </h2>
+              <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
+                Un VTT ? Un vélo électrique ?
+              </h2>
+              <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
+                Nous allons voir tout ça ensemble.
+              </h2>
+            </motion.div>
 
           <div className="flex flex-wrap justify-center border-4 border-black w-full mx-auto my-6 lg:w-full max-w-[950px]">
             <div className="flex w-full bg-ve-blue/50 font-weight">

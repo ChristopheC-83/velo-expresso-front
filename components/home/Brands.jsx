@@ -7,6 +7,7 @@ import Link from "next/link";
 import Container from "../container/Container";
 import { usePartners } from "@/hooks/usePartners";
 import Loader from "@/app/loading";
+import { motion, Variants } from "framer-motion";
 
 export default function Brands() {
   const { data: partners, isFetching, error } = usePartners();

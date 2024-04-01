@@ -9,6 +9,7 @@ import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useWorkshop } from "@/hooks/useWorkshop";
 import { categoriesMeca, meca } from "@/lib/meca";
 import he from "he";
+import {motion} from "framer-motion";
 
 export default function Atelier() {
   const { data: workshop, isFetching, error } = useWorkshop();
@@ -31,10 +32,26 @@ export default function Atelier() {
       <HeaderImage image="/images/meca/meca.jpg" title="L'atelier" />
       <Container>
         <div className="w-full">
-          <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
-            Retrouvez ici les tarifs et les forfaits pour l'entretien de votre
-            vélo :
-          </h2>
+          <motion.div
+          initial={{
+            opacity: 0.15,
+            x: -250,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 0.5,
+              delay: -0.15,
+              ease: "easeInOut",
+            },
+          }}
+          >
+            <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
+              Retrouvez ici les tarifs et les forfaits pour l'entretien de votre
+              vélo :
+            </h2>
+          </motion.div>
 
           <div className="flex flex-wrap justify-center w-full gap-2 pt-4 mx-auto my-6 sm:gap-x-2 md:gap-x-4 md:w-full">
             {categories.map((categorie, index) => (
@@ -65,8 +82,9 @@ export default function Atelier() {
             <div className="w-[350px] h-1"></div>
           </div>
         </div>
-        <div className="w-full mx-auto mb-6 sm:w-4/5 md:w-3/5">
-          <h5 className="mb-2">
+        <div className="w-full mx-auto my-6 sm:w-4/5 md:w-3/5">
+        <hr />
+          <h5 className="mt-6 mb-2">
             * Ces tarifs sont estimatifs. Un devis final vous sera communiquer
             lorsque nous verrons le vélo en magasin.
           </h5>
