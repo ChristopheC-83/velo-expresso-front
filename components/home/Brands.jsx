@@ -7,7 +7,7 @@ import Link from "next/link";
 import Container from "../container/Container";
 import { usePartners } from "@/hooks/usePartners";
 import Loader from "@/app/loading";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Brands() {
   const { data: partners, isFetching, error } = usePartners();
@@ -30,8 +30,23 @@ export default function Brands() {
         </h2>
         <div className="flex flex-wrap justify-center">
           {allPartners.map((brand) => (
-            <div
+            <motion.div
               key={brand.id}
+              initial={{
+                opacity: 0.25,
+                y: 40,
+                scale: 0.5,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: {
+                  duration: 0.75,
+                  delay: -0.15,
+                  ease: "easeInOut",
+                },
+              }}
               className="m-1.5 w-[145px] h-[145px] sm:w-[180px] sm:h-[180px] md:w-[230px] md:h-[230px] shrink-0 partenaire-ext lg:m-12 "
             >
               <div className="absolute bgc-rotate flexMid"></div>
@@ -49,7 +64,7 @@ export default function Brands() {
                   className="logo-brand"
                 />
               </Link>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Container>

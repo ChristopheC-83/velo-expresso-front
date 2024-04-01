@@ -36,7 +36,7 @@ export default function Frames() {
               className={`relative lg:w-2/5 lg:h-[600px] lg:shadow-lg hover:scale-[1.01] lg:transition-all lg:duration-500 `}
               initial={{
                 opacity: 0.75,
-                y: 20,
+                y: 40,
                 scale: 0.9,
               }}
               whileInView={{
