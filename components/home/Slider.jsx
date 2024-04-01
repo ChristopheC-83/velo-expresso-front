@@ -5,6 +5,7 @@
 "use client";
 
 import Image from "next/image";
+import {motion} from "framer-motion";
 import { useState } from "react";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
@@ -47,7 +48,7 @@ export default function Slider() {
   return (
     <div className="w-full  h-[100vw] lg:h-[90vh] bg-ve-dark ">
       <div
-        className={`relative w-full h-[100vw] lg:h-[90vh] bg-no-repeat bg-top aspect-square lg:aspect-[16/9] overflow-hidden bg-cover `}
+        className={`relative w-full h-[100vw] lg:h-[90vh] bg-no-repeat bg-top aspect-square lg:aspect-[16/9] overflow-hidden bg-cover lg:bg-fixed`}
         key={allSliders[sliderNumber]?.slider_id}
         style={{ backgroundImage: `url(${imgPath+allSliders[sliderNumber]?.image})` }}
       >

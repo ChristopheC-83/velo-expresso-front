@@ -1,15 +1,33 @@
 // image d'entête d'un page
 
+import { motion } from "framer-motion";
+
 export default function HeaderImage({ image, title, subtitle }) {
   return (
-    <div className="w-full  h-[100vw] lg:h-[90vh] bg-ve-dark ">
-      <div
-        className={`relative w-full h-[100vw] lg:h-[90vh] bg-no-repeat bg-top aspect-square lg:aspect-[16/9] overflow-hidden bg-cover `}
+    <motion.div className="w-full  h-[100vw] lg:h-[90vh] bg-ve-dark ">
+      <motion.div
+        className={`relative w-full h-[100vw] lg:h-[90vh] bg-no-repeat bg-top aspect-square lg:aspect-[16/9] overflow-hidden bg-cover bg-fixed	 `}
         style={{ backgroundImage: `url(${image})` }}
+        
       >
         <div className="relative w-full h-full text-white flexMid">
           <div className={`absolute inset-0 ${"bg-neutral-900/50"}`}></div>
-          <div className="absolute top-[45%]  w-full">
+          <motion.div
+            className="absolute top-[45%]  w-full"
+            initial={{
+              y: -40,
+              scale: 0.8,
+              opacity: 0,
+            }}
+            animate={{
+              y: 0,
+              scale: 1,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 1,
+            }}
+          >
             <h2 className="text-3xl text-center sm:text-4xl md:text-5xl lg:text-7xl text-shadow-xl">
               {title}
             </h2>
@@ -18,9 +36,9 @@ export default function HeaderImage({ image, title, subtitle }) {
                 {subtitle}
               </h3>
             )}
-          </div>
+          </motion.div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
