@@ -34,7 +34,7 @@ export default function Brands() {
               key={brand.id}
               initial={{
                 opacity: 0.25,
-                y: 40,
+                y: 80,
                 scale: 0.5,
               }}
               whileInView={{
@@ -42,8 +42,8 @@ export default function Brands() {
                 y: 0,
                 scale: 1,
                 transition: {
-                  duration: 0.75,
-                  delay: -0.15,
+                  duration: 0.5,
+                  delay: 0,
                   ease: "easeInOut",
                 },
               }}
