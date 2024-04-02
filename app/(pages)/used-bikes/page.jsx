@@ -35,7 +35,7 @@ export default function UsedBikes() {
     <div className="relative w-full">
       <ArrowToTop />
       <HeaderImage
-        image="/images/rental/rental.jpg"
+        image="/images/usedBikes/occasion.jpg"
         title="Les Vélos d'occasion"
       />
       <Container>

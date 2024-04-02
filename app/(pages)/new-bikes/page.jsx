@@ -34,7 +34,7 @@ export default function NewBikes() {
   return (
     <div className="relative w-full">
       <ArrowToTop />
-      <HeaderImage image="/images/rental/rental.jpg" title="Les Vélos" />
+      <HeaderImage image="/images/newBikes/neuf.jpg" title="Les Vélos" />
       <Container>
         <motion.div
           initial={{

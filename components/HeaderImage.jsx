@@ -11,7 +11,7 @@ export default function HeaderImage({ image, title, subtitle }) {
         
       >
         <div className="relative w-full h-full text-white flexMid">
-          <div className={`absolute inset-0 ${"bg-neutral-900/50"}`}></div>
+          <div className={`absolute inset-0 ${"bg-neutral-900/20"}`}></div>
           <motion.div
             className="absolute top-[45%]  w-full"
             initial={{
