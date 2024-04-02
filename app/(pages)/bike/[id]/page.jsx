@@ -47,8 +47,12 @@ export default function OneBike({ params }) {
       />
       <Container>
         <h2 className="m-8 text-xl text-center font-weight sm:text-3xl ">
-          Le {bike?.bike_brand} {bike?.bike_model} en détails
+          Le {bike?.bike_brand} {bike?.bike_model}
         </h2>
+        <h3 className="m-8 text-lg text-center font-weight sm:text-2xl ">
+          Vélo  
+              {bike?.bike_new==="new" ? " neuf." : " d' occasion."}
+        </h3>
         <div className="flex flex-col w-full max-w-[600px] mx-auto mb-4 px-2">
           <div className="one-bike-array bg-neutral-200">
             <h3>Marque :</h3>
@@ -65,7 +69,7 @@ export default function OneBike({ params }) {
           <div className="one-bike-array bg-neutral-200">
             <h3>Neuf ?</h3>
             <h4 className="font-normal">
-              {bike?.bike_new ? "oui" : "occasion"}
+              {bike?.bike_new==="new" ? "oui" : "occasion"}
             </h4>
           </div>
           {bike?.bike_type && (
@@ -110,9 +114,9 @@ export default function OneBike({ params }) {
               <h4 className="font-normal">{bike?.bike_wheels}</h4>
             </div>
           )}
-          {bike?.bike_brake && (
+          {bike?.bike_brake !="" && (
             <div className="one-bike-array bg-neutral-200">
-              <h3>Freins</h3>
+              <h3>Freins : </h3>
               <h4 className="font-normal">{bike?.bike_brake}</h4>
             </div>
           )}

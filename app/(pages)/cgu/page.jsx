@@ -46,6 +46,8 @@ export default function CGU() {
           par christophe chiappetta, domicilié 4 rue de l ile verte. <br />
           Numéro de téléphone : 0699812296 <br />
           Adresse e-mail : christophe.chiappetta@gmail.com. <br />
+          Le développement de ce site internet a été réalisé dans le cadre d'un exercice de la formation Rocket de Believemy.<br />
+          Malgré toutes les précautions prises, des erreurs peuvent s'être glissées dans les informations et/ou les produits présentés. <br /><br />
           La direction est sous la responsabilité du magasin Vélo Expresso et de
           son dirigeant, Thierry MORISSEAU. <br />
           <br />
