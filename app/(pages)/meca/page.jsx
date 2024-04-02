@@ -7,7 +7,6 @@ import HeaderImage from "@/components/HeaderImage";
 import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useWorkshop } from "@/hooks/useWorkshop";
-import { categoriesMeca, meca } from "@/lib/meca";
 import he from "he";
 import {motion} from "framer-motion";
 

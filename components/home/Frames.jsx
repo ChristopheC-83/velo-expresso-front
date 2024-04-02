@@ -5,12 +5,11 @@
 
 import Image from "next/image";
 import Container from "../container/Container";
-import { frames } from "@/lib/frames";
 import he from "he";
 import { useFrames } from "@/hooks/useFrames";
 import Loader from "@/app/loading";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Frames() {
   const { data: frames, isFetching, error } = useFrames();

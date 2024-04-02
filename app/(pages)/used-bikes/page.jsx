@@ -6,8 +6,6 @@ import HeaderImage from "@/components/HeaderImage";
 import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import CardUsedBike from "@/components/bikes/CardUsedBike";
-import { bikesCatalogue } from "@/lib/bikes";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useBikes } from "@/hooks/useBikes";

@@ -1,5 +1,4 @@
 "use client";
-import Container from "@/components/container/Container";
 import Brands from "@/components/home/Brands";
 import Frames from "@/components/home/Frames";
 import Map from "@/components/home/Map";

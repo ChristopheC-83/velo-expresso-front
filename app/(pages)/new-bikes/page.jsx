@@ -8,11 +8,9 @@ import CardBike from "@/components/bikes/CardBike";
 import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useBikes } from "@/hooks/useBikes";
-import { bikesCatalogue } from "@/lib/bikes";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 export default function NewBikes() {
   // const bikes = bikesCatalogue.filter((bike) => bike.new === true);
