@@ -2,6 +2,7 @@
 
 import { navlinks } from "@/lib/navlinks";
 import Link from "next/link";
+import { FaPowerOff } from "react-icons/fa6";
 
 export default function NavPhone() {
   return (
@@ -18,6 +19,16 @@ export default function NavPhone() {
           </Link>
         </div>
       ))}
+      <div className="p-6 pr-8 w-fit">
+        <Link href="/login">
+          <div className="flex flex-col items-end justify-end scale-110">
+            <h2>
+              <FaPowerOff />
+            </h2>
+            <h3>Login</h3>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 }

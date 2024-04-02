@@ -7,23 +7,38 @@ import { useState } from "react";
 import { ImMenu3 } from "react-icons/im";
 import { ImMenu4 } from "react-icons/im";
 import NavPhone from "./NavPhone";
+import { FaPowerOff } from "react-icons/fa6";
 import Link from "next/link";
 
 export default function TitleHeader() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <div className="flex items-center justify-between w-full p-2 lg:justify-center">
+    <div className="flex items-center justify-between w-full p-2 lg:px-16">
+      <div className="hidden lg:block"></div>
       <Link href="/">
         <h1 className="text-ve-blue text-shadow">Vélo-Expresso</h1>
       </Link>
+
+      <Link href="/login" className="hidden lg:block">
+        <div className="flex align-items-center w-fit h-fit">
+            <div className="pt-1.5 pr-2">
+              <FaPowerOff />
+            </div>
+          <p>connexion</p>
+        </div>
+      </Link>
       {/* pour l'icone hamburger du menu sous les  1024px*/}
       <h2 className="lg:hidden" onClick={() => setMenu(!menu)}>
-        {menu ? <div className="text-4xl">
-          <ImMenu4 />
-        </div> : <div className="text-4xl">
-          <ImMenu3 />
-        </div>}
+        {menu ? (
+          <div className="text-4xl">
+            <ImMenu4 />
+          </div>
+        ) : (
+          <div className="text-4xl">
+            <ImMenu3 />
+          </div>
+        )}
       </h2>
       {menu && (
         <div
