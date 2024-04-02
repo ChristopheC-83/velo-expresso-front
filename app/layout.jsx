@@ -8,7 +8,7 @@ import QueryProvider from "@/providers/query-provider";
 
 export const metadata = {
   title: "Vélo Expresso | Accueil",
-  description: "Vélo Express, votre magasin de vélos dans la Vaunage, à Congénies. Vtt, vélos électriques, vae, vélos enfants, vélos neufs et d'occasion.",
+  description: "Vélo Expresso, votre magasin de vélos dans la Vaunage, entre Calvisson et Sommières à Congénies. Idéalement collé à la voie verte, venez décourir nos Vtt, vélos électriques, vae, vélos enfants, vélos neufs et d'occasion.",
 };
 export default function RootLayout({ children }) {
   return (
