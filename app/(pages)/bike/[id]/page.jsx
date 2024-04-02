@@ -9,6 +9,7 @@ import HeaderImage from "@/components/HeaderImage";
 import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useBikes } from "@/hooks/useBikes";
+import he from "he";
 
 import Image from "next/image";
 
@@ -149,14 +150,15 @@ export default function OneBike({ params }) {
               </div>
             </>
           )}
-          {bike?.description && (
-            <div className="w-full my-4">
-              <h3>Description</h3>
-              <h4 className="font-normal">{bike?.bike_description}</h4>
+          {bike?.bike_description && (
+            <div className="w-full my-6">
+              <h3>Informations complémentaires :</h3>
+              <h4 className="font-normal">{he.decode(bike?.bike_description)}</h4>
             </div>
           )}
         </div>
       </Container>
+      
       <div className="relative w-full my-6 flexMid">
         <Image
           alt={bike?.bike_model}
