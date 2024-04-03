@@ -5,7 +5,6 @@
 import Loader from "@/app/loading";
 import Container from "@/components/container/Container";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { LuMail } from "react-icons/lu";
 
 export default function Login() {
