@@ -8,19 +8,13 @@ import { ImMenu3 } from "react-icons/im";
 import { ImMenu4 } from "react-icons/im";
 import NavPhone from "./NavPhone";
 import Link from "next/link";
-import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import Loader from "@/app/loading";
 import BtnConnection from "./BtnConnection";
 
 export default function TitleHeader() {
   const [menu, setMenu] = useState(false);
-  const router = useRouter();
 
-  // function logout() {
-  //   signOut();
-  //   router.replace("/");
-  // }
+
 
   return (
     <div className="relative flex items-center justify-between w-full p-2 lg:justify-center lg:px-16">
