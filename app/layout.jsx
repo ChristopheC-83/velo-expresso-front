@@ -4,6 +4,7 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import { Toaster } from "sonner";
 import QueryProvider from "@/providers/query-provider";
+import AuthProvider from "@/providers/auth-provider";
 <link rel="icon" href="/favicon.ico" sizes="any" />
 
 export const metadata = {
@@ -15,12 +16,14 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body className="relative min-h-screen">
         <QueryProvider>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-          <Toaster position="top-center" richColors expand={true} />
-            <section className="grow">{children}</section>
-            <Footer />
-          </div>
+          <AuthProvider>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+            <Toaster position="top-center" richColors expand={true} />
+              <section className="grow">{children}</section>
+              <Footer />
+            </div>
+          </AuthProvider>
         </QueryProvider>
       </body>
     </html>
