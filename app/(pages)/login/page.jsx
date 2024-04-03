@@ -4,28 +4,19 @@
 "use client";
 import Loader from "@/app/loading";
 import Container from "@/components/container/Container";
-import { signIn, useSession } from "next-auth/react";
-import Link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { LuMail } from "react-icons/lu";
-import { LuFacebook } from "react-icons/lu";
 
 export default function Login() {
   const { data: session, status } = useSession();
-  const router = useRouter();
-
-  if (session) {
-    router.replace("/");
-    return;
-  }
-
 
   function onLogin(provider) {
     signIn(provider);
   }
 
   if (status === "loading") {
-    return <Loader/>;
+    return <Loader />;
   }
 
   return (
@@ -34,13 +25,24 @@ export default function Login() {
         Connectez-vous avec votre compte Google :
       </h2>
 
-      <div className="flex flex-col gap-4 mx-auto w-fit">
-        <div onClick={() => onLogin("google")}>
-          <div className="w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer rounded-xl flexMid hover:bg-black hover:text-ve-blue">
-            <LuMail /> Connexion avec Google
+      {!session ? (
+        <div className="flex flex-col gap-4 mx-auto w-fit">
+          <div onClick={() => onLogin("google")}>
+            <div className="w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer rounded-xl flexMid hover:bg-black hover:text-ve-blue">
+              <LuMail /> Connexion avec Google
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="flex flex-col gap-4 mx-auto w-fit">
+          <div onClick={() => signOut()}>
+            <div className="w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer rounded-xl flexMid hover:bg-black hover:text-ve-blue">
+              <LuMail />
+              Vous êtes connecté. Cliquez pour vous déconnecter.
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="flex flex-col w-10/12 mx-auto mt-12 mb-6 md:w-9/12 text-md">
         <p>
