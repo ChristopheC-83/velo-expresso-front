@@ -18,11 +18,12 @@ export default function Authenticated({ session }) {
   async function onDelete() {
     let accountToDelete = { email: session.user.email };
     try {
-      const response = await axios.post("/api/account", accountToDelete, {
+      const response = await axios.delete("/api/account", {
         headers: {
-          "Content-Type": "application/json",
+            "Content-Type": "application/json",
         },
-      });
+        data: accountToDelete, // Utilisez 'data' pour passer les données dans une demande DELETE avec axios
+    });
 
       console.log("response", response);
       console.log("response status", response.status);

@@ -1,11 +1,11 @@
 import prisma from "@/lib/connect";
 import { NextResponse } from "next/server";
 
-export const POST = async (req, res) => {
+export const DELETE = async (req, res) => {
   const body = await req.json();
   let { email } = body;
-//   console.log("body opinion", body);
-//   console.log(email);
+  console.log("body opinion", body);
+  console.log(email);
 
   try {
     await prisma.opinion.deleteMany({
