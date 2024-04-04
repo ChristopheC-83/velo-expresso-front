@@ -34,7 +34,7 @@ export default function NewBikes() {
   return (
     <div className="relative w-full">
       <ArrowToTop />
-      <HeaderImage image="/images/newBikes/neuf.jpg" title="Les Vélos" />
+      <HeaderImage image="/images/newBikes/neuf.jpg" title="Les Vélos"/>
       <Container>
         <motion.div
           initial={{
@@ -57,6 +57,7 @@ export default function NewBikes() {
           <div className="flex items-center justify-center">
             <div className="w-fit">
               <h3> nous avons le vélo qu'il vous faut.</h3>
+              <h3> en magasin, nous avons par exemple :</h3>
               <div
                 onClick={() => {
                   setShowText(!showText);
