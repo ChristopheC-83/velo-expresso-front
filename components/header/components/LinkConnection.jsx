@@ -28,14 +28,14 @@ export default function LinkConnection() {
 
   if (session) {
     return (
-      <div onClick={() => logout()} className="cursor-pointer">
+      <Link  href="/login">
         <div className="flex flex-col items-end justify-end scale-110">
           <h2>
             <FaPowerOff />
           </h2>
           <h3>Déconnexion</h3>
         </div>
-      </div>
+      </Link>
     );
   }
 }

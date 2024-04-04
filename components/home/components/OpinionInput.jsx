@@ -96,13 +96,13 @@ export default function OpinionInput() {
     <div>
       {!session ? (
         <Link href="/login">
-          <h3 className="w-full px-3 py-2 my-4 text-center text-white transition-all duration-300 border-2 border-white rounded-full hover:text-black hover:bg-neutral-100 hover:border-black">
+          <h3 className="w-full px-3 py-2 my-4 text-center text-white transition-all duration-300 border-2 border-white rounded-full cursor-pointer hover:text-black hover:bg-neutral-100 hover:border-black">
             Connectez-vous pour partager votre expérience !
           </h3>
         </Link>
       ) : (
         <h3
-          className="w-full px-3 py-2 my-4 text-center text-white transition-all duration-300 border-2 border-white rounded-full hover:text-black hover:bg-neutral-100 hover:border-black"
+          className="w-full px-3 py-2 my-4 text-center text-white transition-all duration-300 border-2 border-white rounded-full cursor-pointer hover:text-black hover:bg-neutral-100 hover:border-black"
           onClick={() => {
             setOpinionForm(!opinionForm);
           }}

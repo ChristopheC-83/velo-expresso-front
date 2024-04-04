@@ -28,7 +28,7 @@ export default function Atelier() {
   return (
     <div className="relative w-full">
       <ArrowToTop />
-      <HeaderImage image="/images/meca/meca.jpg" title="L'atelier" />
+      <HeaderImage image="/images/meca/meca.jpg" title="L'atelier"/>
       <Container>
         <div className="w-full">
           <motion.div

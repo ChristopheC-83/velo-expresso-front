@@ -30,14 +30,14 @@ export default function BtnConnection() {
 
   if (session) {
     return (
-      <div onClick={logout} className="hidden cursor-pointer lg:block">
+      <Link  href="/login">
         <div className="flex align-items-center w-fit h-fit">
           <div className="pt-1.5 pr-2">
             <FaPowerOff />
           </div>
           <p>déconnexion</p>
         </div>
-      </div>
+      </Link>
     );
   }
 }
