@@ -20,7 +20,7 @@ export default function LinkConnection() {
           <h2>
             <FaPowerOff />
           </h2>
-          <h3>Login</h3>
+          <h3>Connexion</h3>
         </div>
       </Link>
     );

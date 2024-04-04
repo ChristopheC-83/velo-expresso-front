@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 export const POST = async (req, res) => {
     
   const body = await req.json();
-  let { name, message, date, response, validated } = body;
-//   console.log("body", body);
+  let { name, message, date, response, validated,userEmail } = body;
+  console.log("body", body);
 
   try {
     const newOpinion = await prisma.opinion.create({
@@ -14,6 +14,7 @@ export const POST = async (req, res) => {
         date,
         response,
         validated,
+        userEmail,
       },
     });
 

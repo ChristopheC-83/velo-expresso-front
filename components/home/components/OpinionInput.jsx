@@ -2,6 +2,8 @@
 "use client";
 
 import axios from "axios";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
@@ -11,11 +13,15 @@ export default function OpinionInput() {
   const [checkedCGU, setCheckedCGU] = useState(false);
   const router = useRouter();
   const formComment = useRef();
+  const { data: session, status } = useSession();
 
-  function handleCheckboxChange(event){
+  if(session){
+    console.log("session", session);
+  }
+
+  function handleCheckboxChange(event) {
     setCheckedCGU(event.target.checked);
   }
-  
 
   async function sendOpinion(opinion) {
     // console.log("opinion : ", opinion);
@@ -41,13 +47,15 @@ export default function OpinionInput() {
     const messageLength = message.length;
     // console.log("messageLength", messageLength);
 
-    if(!checkedCGU){
-      toast.danger("Vous devez accepter les Conditions Générales d'Utilisation pour envoyer votre avis.");
+    if (!checkedCGU) {
+      toast.danger(
+        "Vous devez accepter les Conditions Générales d'Utilisation pour envoyer votre avis."
+      );
       return;
     }
 
     if (name.trim() === "") {
-      name = "Anonyme";
+      name = session.user.name;
     }
 
     if (message.trim() === "") {
@@ -55,10 +63,8 @@ export default function OpinionInput() {
       return;
     }
 
-    if (messageLength < 5 ) {
-      toast.error(
-        `Votre message est trop court ! Au moins 5 caractères 😅`
-      );
+    if (messageLength < 5) {
+      toast.error(`Votre message est trop court ! Au moins 5 caractères 😅`);
       return;
     }
     if (messageLength > 350) {
@@ -74,6 +80,8 @@ export default function OpinionInput() {
       response: "",
       validated: false,
       createdAt: new Date().toISOString().split("T")[0],
+      userEmail: session?.user.email,
+      
     };
     confirm("Confirmez vous l'envoi ? Il sera publié après validation !");
     sendOpinion(newOpinion);
@@ -81,22 +89,33 @@ export default function OpinionInput() {
     setOpinionForm(false);
     // toast.success("Votre avis a bien été envoyé !");
   }
+  if (status === "loading") {
+    return <p>loading...</p>;
+  }
   return (
     <div>
-      <h3
-        className="w-full p-2 my-4 text-center text-white transition-all duration-300 border-2 border-white rounded-full hover:text-black hover:bg-neutral-100 hover:border-black"
-        onClick={() => {
-          setOpinionForm(!opinionForm);
-        }}
-      >
-        A vous de partager votre expérience !
-      </h3>
+      {!session ? (
+        <Link href="/login">
+          <h3 className="w-full px-3 py-2 my-4 text-center text-white transition-all duration-300 border-2 border-white rounded-full hover:text-black hover:bg-neutral-100 hover:border-black">
+            Connectez-vous pour partager votre expérience !
+          </h3>
+        </Link>
+      ) : (
+        <h3
+          className="w-full px-3 py-2 my-4 text-center text-white transition-all duration-300 border-2 border-white rounded-full hover:text-black hover:bg-neutral-100 hover:border-black"
+          onClick={() => {
+            setOpinionForm(!opinionForm);
+          }}
+        >
+          A vous de partager votre expérience !
+        </h3>
+      )}
       {opinionForm && (
         <form action={prepareSendOpinion} ref={formComment} className="mx-2">
           <input
             type="text"
             name="name"
-            placeholder="Votre nom, pseudo... ou rien !"
+            placeholder={`${session?.user.name} ou changez pour un autre pseudo...`}
             className="w-full p-2 my-2 rounded"
           />
           <textarea
@@ -110,15 +129,25 @@ export default function OpinionInput() {
           ></textarea>
 
           <div className="w-full my-3">
-            <input type="checkbox" className="border-gray-300 rounded size-4" 
-        checked={checkedCGU}
-        onChange={handleCheckboxChange}/>
-            <label className="ml-2 text-neutral-100">J'ai lu et j'accepte les <a href="/cgu" className="text-blue-600">Conditions Générales d'Utilisation</a>. </label>
+            <input
+              type="checkbox"
+              className="border-gray-300 rounded size-4"
+              checked={checkedCGU}
+              onChange={handleCheckboxChange}
+            />
+            <label className="ml-2 text-neutral-100">
+              J'ai lu et j'accepte les{" "}
+              <a href="/cgu" className="text-blue-600">
+                Conditions Générales d'Utilisation
+              </a>
+              .{" "}
+            </label>
           </div>
 
           <button
             type="submit"
-            className="w-full p-2 my-4 text-white transition-all duration-300 border-2 border-white rounded-full disabled:pointer-events-none hover:text-black hover:bg-neutral-100 hover:border-black disabled:opacity-50 disabled:cursor-not-allowed " disabled={!checkedCGU}
+            className="w-full p-2 my-4 text-white transition-all duration-300 border-2 border-white rounded-full disabled:pointer-events-none hover:text-black hover:bg-neutral-100 hover:border-black disabled:opacity-50 disabled:cursor-not-allowed "
+            disabled={!checkedCGU}
           >
             <h4>Envoyer mon avis</h4>
           </button>
