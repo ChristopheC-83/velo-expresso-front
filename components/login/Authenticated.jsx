@@ -4,6 +4,9 @@ import { toast } from "sonner";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
+import { IoMdLogOut } from "react-icons/io";import { BsTrash } from "react-icons/bs";
+
+
 
 /* eslint-disable react/no-unescaped-entities */
 export default function Authenticated({ session }) {
@@ -51,8 +54,8 @@ export default function Authenticated({ session }) {
       <div className="flex flex-col gap-4 mx-auto w-fit">
         <div className="flex flex-col w-full gap-4">
           <div onClick={() => onLogout()}>
-            <div className="w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer rounded-xl flexMid hover:bg-black hover:text-ve-blue">
-              <LuMail />
+            <div className="w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer rounded-xl flexMid hover:bg-black hover:text-orange-400">
+            <IoMdLogOut className="me-auto" />
               Vous êtes connecté. Cliquez ici pour vous déconnecter.
             </div>
           </div>
@@ -63,8 +66,8 @@ export default function Authenticated({ session }) {
               confirm("Voulez vous vraiment tout supprimer ?") && onDelete();
             }}
           >
-            <div className="w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer rounded-xl flexMid hover:bg-black hover:text-ve-blue">
-              <LuMail />
+            <div className="w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer rounded-xl flexMid hover:bg-black hover:text-red-500">
+            <BsTrash className="me-auto" />
               Supprimez votre compte, vos données et votre avis.
             </div>
           </div>
@@ -72,30 +75,11 @@ export default function Authenticated({ session }) {
       </div>
 
       <div className="flex flex-col w-10/12 mx-auto mt-12 mb-6 md:w-9/12 text-md">
+      <h4>Important :</h4>
         <p>
-          * Le but de la connexion est de vous permettre de poster un avis en
-          toute sécurité.
+          * La suppression de votre compte est irréversible.
         </p>
-        <p>
-          * Votre adresse mail ne sera pas utilisée dans un but de commercial ni
-          transmise à une entité tiers.
-        </p>
-        <p>
-          * Il pourra potentiellement nous permettre de vous répondre en cas de
-          question(s) et/ou de réclamation(s).
-        </p>
-        <p>
-          * En vous connectant, vous acceptez qu'un <b>COOKIE</b> de connexion
-          soit émis sur votre machine. Son unique but est de garantir votre
-          connexion. Il n'a aucune autre utilité et ne sera pas utilisé à des
-          fins commerciales ou de suivi autre que celui de votre connexion.
-        </p>
-        <p>
-          * Les informations récupérées lors de la connexion et votre avis, s'il
-          a été publié, seront détruits de notre base de données sur simple
-          demande émanant de la même adresse mail que celle qui vous aura servi
-          à la connexion à ce site.{" "}
-        </p>
+        <p>* Elle entrainera l'effacement de toutes vos données de nos bases et de l'avis que vous auriez pu poster sur le site.</p>
       </div>
     </Container>
   );

@@ -1,12 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
+"use client";
+
 import { LuMail } from "react-icons/lu";
 import Container from "../container/Container";
 import { signIn } from "next-auth/react";
+import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
 
 export default function Unauthenticated() {
-  
-  function onLogin(provider) {
-    signIn(provider);
+  const [checkedCGU, setCheckedCGU] = useState(false);
+
+  function handleCheckboxChange(event) {
+    console.log("event.target.checked", event.target.checked);
+    setCheckedCGU(event.target.checked);
+  }
+
+  function onLogin() {
+    signIn("google");
   }
 
   return (
@@ -15,15 +25,38 @@ export default function Unauthenticated() {
         Connectez-vous avec votre compte Google :
       </h2>
 
-      <div className="flex flex-col gap-4 mx-auto w-fit">
-        <div onClick={() => onLogin("google")}>
-          <div className="w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer rounded-xl flexMid hover:bg-black hover:text-ve-blue">
-            <LuMail /> Connexion avec Google
+      <div className="mx-auto mb-8 w-fit">
+        <div onClick={checkedCGU ? onLogin : null}>
+          <div
+            className={`w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-200 border-4 rounded-xl flexMid hover:bg-black hover:text-ve-blue ${
+              checkedCGU
+                ? "cursor-pointer border-black"
+                : "text-neutral-500 cursor-not-allowed pointer-events-none border-neutral-500"
+            }`}
+          >
+            <FcGoogle className="me-auto" />
+            Connexion avec Google
           </div>
         </div>
       </div>
-
-      <div className="flex flex-col w-10/12 mx-auto mt-12 mb-6 md:w-9/12 text-md">
+      <div className="w-full mt-4 mb-8 text-center">
+        <input
+          type="checkbox"
+          className="border-gray-300 rounded size-4"
+          checked={checkedCGU}
+          onChange={handleCheckboxChange}
+        />
+        <label className="ml-2 text-center">
+          J'ai lu et j'accepte les{" "}
+          <a href="/cgu" className="text-blue-600">
+            Conditions Générales d'Utilisation{" "}
+          </a>
+          et les informations ci-dessous.
+        </label>
+      </div>
+      <hr />
+      <div className="flex flex-col w-10/12 mx-auto mt-8 mb-6 md:w-9/12 text-md">
+        <h4>Important :</h4>
         <p>
           * Le but de la connexion est de vous permettre de poster un avis en
           toute sécurité.
@@ -43,10 +76,10 @@ export default function Unauthenticated() {
           fins commerciales ou de suivi autre que celui de votre connexion.
         </p>
         <p>
-          * Les informations récupérées lors de la connexion et votre avis, s'il
-          a été publié, seront détruits de notre base de données sur simple
-          demande émanant de la même adresse mail que celle qui vous aura servi
-          à la connexion à ce site.{" "}
+          * Les informations récupérées lors de la connexion et votre avis
+          peuvent être supprimées à tout moment en cliquant sur le bouton
+          "Supprimez votre compte, vos données et votre avis." une fois que vous
+          êtes connecté.
         </p>
       </div>
     </Container>
