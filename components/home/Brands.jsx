@@ -22,7 +22,7 @@ export default function Brands() {
   }
 
   return (
-    <div className="bg-neutral-800 min-h-[100px]  justify-center pb-4 md:py-6">
+    <div className="bg-neutral-800 min-h-[100px] justify-center pb-4 md:py-12">
       <Container>
         <h2 className="py-4 text-center text-white">
           Nous leur faisons confiance :
