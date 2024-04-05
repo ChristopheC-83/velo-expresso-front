@@ -156,5 +156,3 @@ export default function OpinionInput() {
     </div>
   );
 }
-
-console.log("coucou")
