@@ -18,6 +18,7 @@ export default function OpinionInput() {
   if(session){
     console.log("session", session);
   }
+  
 
   function handleCheckboxChange(event) {
     setCheckedCGU(event.target.checked);
@@ -31,15 +32,22 @@ export default function OpinionInput() {
           "Content-Type": "application/json",
         },
       });
-      if (!response.status === 200) {
-        throw new Error("Erreur lors de l'envoi de l'avis !!!");
-      }
+    if (response.status === 200) {
       router.push("/");
       toast.success("Votre avis a bien été envoyé !");
-    } catch {
+    } else {
+      throw new Error("Erreur lors de l'envoi de l'avis !!!");
+    }
+  } catch (error) {
+    if (error.response && error.response.status === 400) {
+      // Si le statut de la réponse est 400, cela signifie que l'utilisateur a déjà posté un avis
+      toast.error("Vous avez déjà posté un avis.");
+    } else {
+      // Sinon, affichez un message d'erreur générique
       toast.error("Erreur lors de l'envoi de l'avis !");
     }
   }
+}
 
   function prepareSendOpinion(formData) {
     let name = formData.get("name");
@@ -156,5 +164,3 @@ export default function OpinionInput() {
     </div>
   );
 }
-
-console.log("coucou")

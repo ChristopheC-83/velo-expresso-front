@@ -13,7 +13,7 @@ export default function Authenticated({ session }) {
 
   const router = useRouter();
   
-  function onLogout() {
+   function onLogout() {
     signOut();
     router.push("/");
   }
@@ -25,7 +25,7 @@ export default function Authenticated({ session }) {
         headers: {
             "Content-Type": "application/json",
         },
-        data: accountToDelete, // Utilisez 'data' pour passer les données dans une demande DELETE avec axios
+        data: accountToDelete,
     });
 
       console.log("response", response);

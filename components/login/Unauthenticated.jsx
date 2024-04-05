@@ -15,8 +15,8 @@ export default function Unauthenticated() {
     setCheckedCGU(event.target.checked);
   }
 
-  function onLogin() {
-    signIn("google");
+  function onLogin(provider) {
+    signIn(provider);
   }
 
   return (
@@ -26,7 +26,7 @@ export default function Unauthenticated() {
       </h2>
 
       <div className="mx-auto mb-8 w-fit">
-        <div onClick={checkedCGU ? onLogin : null}>
+        <div onClick={checkedCGU ? onLogin("google") : null}>
           <div
             className={`w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-200 border-4 rounded-xl flexMid hover:bg-black hover:text-ve-blue ${
               checkedCGU
