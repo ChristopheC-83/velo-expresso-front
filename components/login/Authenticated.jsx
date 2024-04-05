@@ -52,22 +52,23 @@ export default function Authenticated({ session }) {
       <h2 className="my-16 text-center">Bonjour {session.user.name} !</h2>
 
       <div className="flex flex-col gap-16 mx-auto w-fit">
-        <div className="flex flex-col w-full gap-4">
+        <div className="flex flex-col w-full">
           <div onClick={() => onLogout()}>
             <div className="w-full gap-3 px-6 py-4 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer flexMid hover:bg-black hover:text-orange-400">
-            <IoMdLogOut className="me-auto" />
+            <IoMdLogOut className="text-2xl me-auto" />
               Vous êtes connecté. Cliquez ici pour vous déconnecter.
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-full gap-4">
+        
+        <div className="flex flex-col w-full">
           <div
             onClick={() => {
               confirm("Voulez vous vraiment tout supprimer ?") && onDelete();
             }}
           >
             <div className="w-full gap-3 px-6 py-4 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer flexMid hover:bg-black hover:text-red-500">
-            <BsTrash className="me-auto" />
+            <BsTrash className="text-2xl me-auto" />
               Supprimez votre compte, vos données et votre avis.
             </div>
           </div>

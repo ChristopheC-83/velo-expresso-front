@@ -17,7 +17,8 @@ export default function OpinionInput() {
   const { data: session, status } = useSession();
 
   if(session){
-    console.log("session", session);
+    console.log("session opinion input", session);
+    // console.log ("opinions : ", opinions)
   }
 
   function handleCheckboxChange(event) {
@@ -27,22 +28,33 @@ export default function OpinionInput() {
   
 
   async function sendOpinion(opinion) {
-    // console.log("opinion : ", opinion);
     try {
-      const response = await axios.post("/api/opinions", opinion, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      if (!response.status === 200) {
-        throw new Error("Erreur lors de l'envoi de l'avis !!!");
-      }
-      router.push("/");
-      toast.success("Votre avis a bien été envoyé !");
-    } catch {
-      toast.error("Erreur lors de l'envoi de l'avis !");
+        const response = await axios.post("/api/opinions", opinion, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        if (response.status === 200) {
+            // L'avis a été envoyé avec succès
+            router.push("/");
+            toast.success("Votre avis a bien été envoyé !");
+        } else {
+            // Erreur inattendue lors de l'envoi de l'avis
+            throw new Error("Erreur lors de l'envoi de l'avis !!!");
+        }
+    } catch (error) {
+        // Gérer les erreurs
+        if (error.response && error.response.status === 500 && error.response.data && error.response.data.message === "Impossible de poster votre avis.") {
+            // L'utilisateur a déjà posté un avis
+            toast.error("Vous avez déjà posté un avis !");
+        } else {
+            // Erreur inattendue
+            console.error("Erreur lors de l'envoi de l'avis :", error);
+            toast.error("Erreur lors de l'envoi de l'avis !");
+        }
     }
-  }
+}
+
 
   function prepareSendOpinion(formData) {
     let name = formData.get("name");

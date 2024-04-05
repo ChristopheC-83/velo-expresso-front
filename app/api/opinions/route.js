@@ -22,6 +22,8 @@ export const POST = async (req, res) => {
     console.log("newOpinion", newOpinion);
     return NextResponse.json(newOpinion, { status: 200 });
   } catch (error) {
+    console.log("error", error);
+    console.log("error.message", error.message);
     return NextResponse.json(
       { message: "Impossible de poster votre avis." },
       { status: 500 }
