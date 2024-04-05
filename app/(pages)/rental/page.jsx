@@ -10,7 +10,7 @@ import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useRentals } from "@/hooks/useRentals";
 import he from "he";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Rentals() {
   const { data: rentals, isFetching, error } = useRentals();
@@ -29,13 +29,13 @@ export default function Rentals() {
   }
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full overflow-hidden">
       <ArrowToTop />
       <HeaderImage image="/images/rental/rental.jpg" title="La location" />
       <Container>
         <div className="w-full">
-            <motion.div 
-             initial={{
+          <motion.div
+            initial={{
               opacity: 0.15,
               x: -250,
             }}
@@ -48,19 +48,66 @@ export default function Rentals() {
                 ease: "easeInOut",
               },
             }}
-            >
-              <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
-                Une demi-journée ? Une semaine ?
-              </h2>
-              <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
-                Un VTT ? Un vélo électrique ?
-              </h2>
-              <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
-                Nous allons voir tout ça ensemble.
-              </h2>
-            </motion.div>
+          >
+            <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
+              Une demi-journée ? Une semaine ?
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{
+              opacity: 0.15,
+              x: 250,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.5,
+                delay: -0.15,
+                ease: "easeInOut",
+              },
+            }}
+          >
+            <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
+              Un VTT ? Un vélo électrique ?
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{
+              opacity: 0.15,
+              x: -250,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.5,
+                delay: -0.15,
+                ease: "easeInOut",
+              },
+            }}
+          >
+            <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
+              Nous allons voir tout ça ensemble.
+            </h2>
+          </motion.div>
 
-          <div className="flex flex-wrap justify-center border-4 border-black w-full mx-auto my-6 lg:w-full max-w-[950px]">
+          <motion.div
+          initial={{
+            opacity: 0.15,
+            y: 150,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.5,
+              delay: -0.15,
+              ease: "easeInOut",
+            },
+          }}
+          
+          className="flex flex-wrap justify-center border-4 border-black w-full mx-auto my-6 lg:w-full max-w-[950px]">
             <div className="flex w-full bg-ve-blue/50 font-weight">
               <p className="timing-rental w-[30%]">Article</p>
               <p className="timing-rental w-[15%]">Demi-journée</p>
@@ -70,7 +117,7 @@ export default function Rentals() {
             </div>
             {rentalsItems.map((item) => (
               <div key={item.id} className="flex w-full">
-                 <div className="price-rental  w-[30%] bg-ve-blue/50 ">
+                <div className="price-rental  w-[30%] bg-ve-blue/50 ">
                   <p className="mr-auto">{he.decode(item.name)}</p>
                 </div>
                 <p className="price-rental w-[15%]">{item.half_day} €</p>
@@ -79,7 +126,7 @@ export default function Rentals() {
                 <p className="price-rental w-[15%]">{item.week} €</p>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
         <div className="w-full mx-auto mb-6 sm:w-4/5 md:w-3/5">
           <hr />
