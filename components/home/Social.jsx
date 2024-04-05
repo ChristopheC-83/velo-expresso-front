@@ -5,6 +5,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "../container/Container";
+import { motion } from "framer-motion";
 
 export default function Social() {
   const networks = [
@@ -33,19 +34,37 @@ export default function Social() {
 
         <div className="reseaux-logo">
           {networks.map((network, index) => (
-            <Link
-              key={index}
-              href={network.url}
-              target="_blank"
+            <motion.div 
+            key={index}
+            initial={{
+              opacity: 0.25,
+              y: 80,
+              scale: 0.5,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: {
+                duration: 0.5,
+                delay: 0,
+                ease: "easeInOut",
+              },
+            }}
             >
-              <Image
-                src={network.logo}
-                alt={network.name}
-                width={200}
-                height={200}
-                className={`img-social`}
-              />
-            </Link>
+              <Link
+                href={network.url}
+                target="_blank"
+              >
+                <Image
+                  src={network.logo}
+                  alt={network.name}
+                  width={200}
+                  height={200}
+                  className={`img-social`}
+                />
+              </Link>
+            </motion.div>
           ))}
         </div>
       </Container>

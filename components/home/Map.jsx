@@ -4,8 +4,8 @@
 export default function Map() {
     const urlIframe ="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d605.6534438091112!2d4.158121267084905!3d43.77307599523545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b42717a0b50a9b%3A0xcccb132f487e1fde!2sV%C3%A9lo%20expresso!5e0!3m2!1sfr!2sfr!4v1710999243587!5m2!1sfr!2sfr";
   return (
-    <div className="bg-neutral-800 min-h-[100px]  justify-center py-8">
-      <h2 className="my-16 text-center text-white">
+    <div className="bg-neutral-800 min-h-[100px]  justify-center py-6">
+      <h2 className="my-8 text-center text-white">
         Et venir nous voir, par là :
       </h2>
       <div className="flex flex-col items-center justify-center w-full mb-6">
@@ -60,7 +60,6 @@ export default function Map() {
         
       </div>
 
-      <h3 className="my-16 leading-10 text-center text-white ">Nous vous accueillons <br /> mardi au samedi <br /> de 9h à 19h.</h3>
     </div>
   );
 }

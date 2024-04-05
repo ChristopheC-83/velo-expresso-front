@@ -195,8 +195,8 @@ export default function CGU() {
           publication sur internet et sur les réseaux de téléphonie mobile.
           <br />
           <br />
-          La société éditrice s'engage à faire figurer le nom du membre à
-          proximité de chaque utilisation de sa publication.
+          La société éditrice s'engage à faire figurer le nom du membre (ou le pseudonyme choisit par celui-ci) à
+          proximité de chaque utilisation de sa publication ainsi que la date d'émission de celle-ci.
           <br />
           <br />
           Tout contenu mis en ligne par l'Utilisateur est de sa seule
@@ -208,6 +208,9 @@ export default function CGU() {
           <br />
           Le contenu de l'Utilisateur peut être à tout moment et pour n'importe
           quelle raison supprimé ou modifié par le site, sans préavis.
+          <br />
+          <br />
+          L'Utilisateur peut, et à tout instant, supprimer son compte et le contenu qu'il a publié. A ce moment là, le site n'aura plus en sa possession ni le contenu publié, ni les informations de l'Utilisateur (adresse mail, pseudonyme Google et avatar Google).
           <br />
           <br />
         </p>

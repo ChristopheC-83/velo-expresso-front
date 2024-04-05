@@ -1,5 +1,8 @@
 import { HiMail } from "react-icons/hi";
 import { BsFillTelephoneOutboundFill } from "react-icons/bs";
+import { FaCalendarAlt } from "react-icons/fa";
+import { FaClock } from "react-icons/fa";
+
 import Link from "next/link";
 
 export default function Footer() {
@@ -27,10 +30,24 @@ export default function Footer() {
                 04.66.95.17.09
               </a>
             </h4>
+            <h4 className="mb-2">
+              <span className="flex items-center gap-x-2">
+                <FaCalendarAlt />
+                Ouvert du Mardi au Samedi
+              </span>
+            </h4>
+            <h4 className="mb-2">
+              <span className="flex items-center gap-x-2">
+                <FaClock />
+                de 9h à 19h Non-Stop
+              </span>
+            </h4>
           </div>
           <div className="flex flex-col justify-between md:items-center md:flex-row ">
             <div className="p-4 rounded-xl bg-neutral-800/60">
-              <h4><Link href="/cgu">Mentions Légales</Link></h4>
+              <h4>
+                <Link href="/cgu">Mentions Légales</Link>
+              </h4>
             </div>
             <h5>&copy; COPYRIGHT VELO-EXPRESSO - 2024</h5>
           </div>
