@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
+import { useOpinions } from "@/hooks/useOpinions";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -22,6 +23,8 @@ export default function OpinionInput() {
   function handleCheckboxChange(event) {
     setCheckedCGU(event.target.checked);
   }
+
+  
 
   async function sendOpinion(opinion) {
     // console.log("opinion : ", opinion);

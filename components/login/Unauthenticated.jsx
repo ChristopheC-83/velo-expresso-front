@@ -21,14 +21,14 @@ export default function Unauthenticated() {
 
   return (
     <Container>
-      <h2 className="my-8 text-center">
+      <h2 className="my-12 text-center">
         Connectez-vous avec votre compte Google :
       </h2>
 
-      <div className="mx-auto mb-8 w-fit">
+      <div className="mx-auto my-16 w-fit">
         <div onClick={checkedCGU ? onLogin : null}>
           <div
-            className={`w-full gap-3 px-4 py-2 mx-auto text-xl font-bold duration-200 border-4 rounded-xl flexMid hover:bg-black hover:text-ve-blue ${
+            className={`w-full gap-3 px-6 py-4 mx-auto text-xl font-bold duration-200 border-4 flexMid hover:bg-black hover:text-ve-blue ${
               checkedCGU
                 ? "cursor-pointer border-black"
                 : "text-neutral-500 cursor-not-allowed pointer-events-none border-neutral-500"
@@ -39,7 +39,7 @@ export default function Unauthenticated() {
           </div>
         </div>
       </div>
-      <div className="w-full mt-4 mb-8 text-center">
+      <div className="w-full mt-4 mb-16 text-center">
         <input
           type="checkbox"
           className="border-gray-300 rounded size-4"
@@ -55,7 +55,7 @@ export default function Unauthenticated() {
         </label>
       </div>
       <hr />
-      <div className="flex flex-col w-10/12 mx-auto mt-8 mb-6 md:w-9/12 text-md">
+      <div className="flex flex-col w-10/12 mx-auto mt-16 mb-6 md:w-9/12 text-md">
         <h4>Important :</h4>
         <p>
           * Le but de la connexion est de vous permettre de poster un avis en

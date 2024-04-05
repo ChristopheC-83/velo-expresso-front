@@ -19,7 +19,7 @@ export const POST = async (req, res) => {
         userEmail,
       },
     });
-
+    console.log("newOpinion", newOpinion);
     return NextResponse.json(newOpinion, { status: 200 });
   } catch (error) {
     return NextResponse.json(
