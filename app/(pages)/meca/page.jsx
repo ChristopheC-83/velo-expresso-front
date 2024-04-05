@@ -26,7 +26,7 @@ export default function Atelier() {
   }
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full overflow-hidden">
       <ArrowToTop />
       <HeaderImage image="/images/meca/meca.jpg" title="L'atelier"/>
       <Container>
@@ -73,7 +73,21 @@ export default function Atelier() {
 
           <div className="flex flex-wrap justify-center w-full gap-2 pt-4 mx-auto my-6 sm:gap-x-2 md:gap-x-4 md:w-full">
             {categories.map((categorie, index) => (
-              <div
+              <motion.div
+
+              initial={{
+                opacity: 0.15,
+                y: 150,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                  delay: -0.15,
+                  ease: "easeInOut",
+                },
+              }}
                 key={categorie.id}
                 className="w-full h-fit text-center border-x-2 border-t-2 border-black xs:w-[350px]"
               >
@@ -94,7 +108,7 @@ export default function Atelier() {
                       </div>
                     ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
             <div className="w-[350px] h-1"></div>
             <div className="w-[350px] h-1"></div>

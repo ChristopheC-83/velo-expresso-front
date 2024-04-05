@@ -129,7 +129,7 @@ export default function UsedBikes() {
             </motion.div>
           ))}
         </div>
-        <h4 className="py-4 font-normal text-center">
+        <h4 className="py-12 font-normal text-center">
           Vous savez exactement ce que vous voulez ? <br /> Vous voulez
           inaugurer votre{" "}
           <Link href="/new-bikes">

@@ -126,7 +126,7 @@ export default function NewBikes() {
             </motion.div>
           ))}
         </div>
-        <h4 className="py-4 font-normal text-center">
+        <h4 className="py-12 font-normal text-center">
           Pour se lancer ou trouver une bonne affaire :<br />
           <Link href="/used-bikes">
             <u>

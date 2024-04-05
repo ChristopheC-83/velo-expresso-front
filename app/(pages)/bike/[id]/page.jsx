@@ -10,6 +10,7 @@ import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useBikes } from "@/hooks/useBikes";
 import he from "he";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Image from "next/image";
 
@@ -46,9 +47,24 @@ export default function OneBike({ params }) {
         subtitle={bike?.bike_model}
       />
       <Container>
-        <h2 className="m-8 text-xl text-center font-weight sm:text-3xl ">
-          Le {bike?.bike_brand} {bike?.bike_model}
-        </h2>
+        <motion.div 
+        initial={{
+          opacity: 0.15,
+          x: -150,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 0.5,
+            delay: -0.15,
+            ease: "easeInOut",
+          },
+        }} >
+          <h2 className="m-8 text-xl text-center font-weight sm:text-3xl ">
+            Le {bike?.bike_brand} {bike?.bike_model}
+          </h2>
+        </motion.div>
         <h3 className="m-8 text-lg text-center font-weight sm:text-2xl ">
           Vélo  
               {bike?.bike_new==="new" ? " neuf." : " d' occasion."}
@@ -159,7 +175,7 @@ export default function OneBike({ params }) {
         </div>
       </Container>
       
-      <div className="relative w-full my-6 flexMid">
+      <div className="relative w-full my-16 flexMid">
         <Image
           alt={bike?.bike_model}
           src={imgPath + bike?.bike_picture}
