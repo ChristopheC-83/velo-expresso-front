@@ -16,7 +16,7 @@ export default function HeaderImage({ image, title, subtitle }) {
             className="absolute top-[45%]  w-full"
             initial={{
               y: -40,
-              scale: 0.8,
+              scale: 0.75,
               opacity: 0,
             }}
             animate={{
