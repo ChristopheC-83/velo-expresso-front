@@ -125,7 +125,7 @@ export default function OneBike({ params }) {
               <h4 className="font-normal">{bike?.bike_wheels}</h4>
             </div>
           )}
-          {bike?.bike_brake != "" && (
+          {bike?.bike_brake  && (
             <div className="one-bike-array bg-neutral-200">
               <h3>Freins : </h3>
               <h4 className="font-normal">{bike?.bike_brake}</h4>
