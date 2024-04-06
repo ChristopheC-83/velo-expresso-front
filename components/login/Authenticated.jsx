@@ -63,7 +63,7 @@ export default function Authenticated({ session }) {
   return (
     <Container>
       <h2 className="my-16 text-center">
-        Bonjour <span className="uppercase">{session.user.name}</span> !
+        Bonjour <span className="uppercase">{session.user.name}</span> 
       </h2>
 
       <div className="flex flex-col gap-16 mx-auto w-fit max-w-[650px] px-4">
