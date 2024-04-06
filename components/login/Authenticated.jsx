@@ -13,14 +13,14 @@ export default function Authenticated({ session }) {
   const buttons = [
     {
       id: 1,
-      colorBtn: "orange-400",
+      colorBtn: "text-orange-400",
       textBtn: "Cliquez ici pour vous déconnecter.",
       iconBtn: <IoMdLogOut />,
       onClick: () => onLogout(),
     },
     {
       id: 2,
-      colorBtn: "red-500",
+      colorBtn: "text-red-500",
       textBtn: "Supprimez votre compte, vos données et votre avis.",
       iconBtn: <BsTrash />,
       onClick: () =>
@@ -71,10 +71,10 @@ export default function Authenticated({ session }) {
           <div className="flex flex-col w-full" key={button.id}>
             <div onClick={button.onClick}>
               <div
-                className={`w-full gap-3 px-6 py-4 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer flexMid hover:bg-neutral-700 hover:text-${button.colorBtn}`}
+                className={`w-full gap-3 px-6 py-4 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer flexMid hover:bg-neutral-700 hover:${button.colorBtn}`}
               >
                 <span
-                  className={`text-xl text-${button.colorBtn} sm:text-2xl md:text-3xl me-auto shrink-0`}
+                  className={`text-xl ${button.colorBtn} sm:text-2xl md:text-3xl me-auto shrink-0`}
                 >
                   {button.iconBtn}
                 </span>
