@@ -14,13 +14,10 @@ import Link from "next/link";
 import {  useState } from "react";
 
 export default function NewBikes() {
-  // const bikes = bikesCatalogue.filter((bike) => bike.new === true);
   const [showText, setShowText] = useState(false);
   const { data: bikesApi, isFetching, isLoading, error } = useBikes();
+  //  on filtre les vélos neufs parmi les vélos proposés en base de données
   const bikes = bikesApi?.bikes.filter((bike) => bike.bike_new === "new");
-  // if (bikes) {
-  //   console.log(bikes);
-  // }
 
   if (isFetching) {
     return <Loader />;

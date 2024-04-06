@@ -1,12 +1,11 @@
 import prisma from "@/lib/connect";
 import { NextResponse } from "next/server";
 
+//  suppression compte ET avis par l'utilisateur connecté
+
 export const DELETE = async (req, res) => {
   const body = await req.json();
   let { email } = body;
-  console.log("body opinion", body);
-  console.log(email);
-
   try {
     await prisma.opinion.deleteMany({
       where: {

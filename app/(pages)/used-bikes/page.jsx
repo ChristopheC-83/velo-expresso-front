@@ -17,11 +17,8 @@ export default function UsedBikes() {
   // const bikes = bikesCatalogue.filter((bike) => bike.new === false);
   const [showText, setShowText] = useState(false);
   const { data: bikesApi, isFetching, isLoading, error } = useBikes();
+  //  on filtre les vélos d'occasion parmi les vélos proposés en base de données
   const bikes = bikesApi?.bikes.filter((bike) => bike.bike_new === "used");
-  // if (bikes) {
-  //   console.log(bikes);
-  // }
-
   if (isFetching) {
     return <Loader />;
   }

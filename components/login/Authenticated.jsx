@@ -43,9 +43,7 @@ export default function Authenticated({ session }) {
         },
         data: accountToDelete,
       });
-
-      // console.log("response", response);
-      // console.log("response status", response.status);
+      
       if (response.status === 200) {
         signOut();
         toast.success("Vos compte / avis ont bien été supprimés.");

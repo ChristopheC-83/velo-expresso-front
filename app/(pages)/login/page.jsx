@@ -3,32 +3,24 @@
 
 "use client";
 import Loader from "@/app/loading";
-import Container from "@/components/container/Container";
 import Authenticated from "@/components/login/Authenticated";
 import Unauthenticated from "@/components/login/Unauthenticated";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { LuMail } from "react-icons/lu";
 
 export default function Login() {
   const { data: session, status } = useSession();
-  const router = useRouter();
 
-  console.log("session", session, status);
-
-  
- 
+  // console.log("session", session, status);
+  // Y a t il une session en cours ?
 
   if (status === "loading") {
     return <Loader />;
   }
-
   if (status === "unauthenticated") {
-     return <Unauthenticated  />;
-     
+    return <Unauthenticated />;
   }
-
   if (status === "authenticated") {
-   return  <Authenticated session={session} />;
+    return <Authenticated session={session} />;
   }
 }

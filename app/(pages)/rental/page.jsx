@@ -61,6 +61,7 @@ export default function Rentals() {
             </h2>
           </motion.div>
 
+          {/*  tableau des tarifs pour les locations, mis en DB et modifiables par le propriétaire du mag */}
           <motion.div
             initial={cardToUpVariants.initialFromDown}
             whileInView={cardToUpVariants.finalState}

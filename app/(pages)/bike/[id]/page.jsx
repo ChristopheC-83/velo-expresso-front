@@ -10,7 +10,7 @@ import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useBikes } from "@/hooks/useBikes";
 import he from "he";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import Image from "next/image";
 import { cardToUpVariants, subTitleVariants } from "@/lib/framerVariants";
@@ -21,13 +21,8 @@ export default function OneBike({ params }) {
   let { id } = params;
   id = parseInt(id, 10);
   // const bike = bikesCatalogue.filter((bike) => bike?.id === id)[0];
-
   const { data: bikesApi, isFetching, isLoading, error } = useBikes();
   const bike = bikesApi?.bikes.filter((bike) => bike?.bike_id == id)[0];
-
-  // if (bike) {
-  //   console.log(bike);
-  // }
 
   if (isFetching) {
     return <Loader />;
