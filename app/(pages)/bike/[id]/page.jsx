@@ -13,6 +13,7 @@ import he from "he";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Image from "next/image";
+import { cardToUpVariants, subTitleVariants } from "@/lib/framerVariants";
 
 export default function OneBike({ params }) {
   const imgPath = "https://dbve.barpat.fun/public/assets/images/bikes/";
@@ -47,29 +48,28 @@ export default function OneBike({ params }) {
         subtitle={bike?.bike_model}
       />
       <Container>
-        <motion.div 
-        initial={{
-          opacity: 0.15,
-          x: -150,
-        }}
-        whileInView={{
-          opacity: 1,
-          x: 0,
-          transition: {
-            duration: 0.5,
-            delay: -0.15,
-            ease: "easeInOut",
-          },
-        }} >
+        <motion.div
+          initial={subTitleVariants.initialFromLeft}
+          whileInView={subTitleVariants.finalState}
+        >
           <h2 className="m-8 text-xl text-center font-weight sm:text-3xl ">
             Le {bike?.bike_brand} {bike?.bike_model}
           </h2>
         </motion.div>
-        <h3 className="m-8 text-lg text-center font-weight sm:text-2xl ">
-          Vélo  
-              {bike?.bike_new==="new" ? " neuf." : " d' occasion."}
-        </h3>
-        <div className="flex flex-col w-full max-w-[600px] mx-auto mb-4 px-2">
+        <motion.div
+          initial={subTitleVariants.initialFromRight}
+          whileInView={subTitleVariants.finalState}
+        >
+          <h3 className="m-8 text-lg text-center font-weight sm:text-2xl ">
+            Vélo
+            {bike?.bike_new === "new" ? " neuf." : " d' occasion."}
+          </h3>
+        </motion.div>
+        <motion.div
+          initial={cardToUpVariants.initialFromDown}
+          whileInView={cardToUpVariants.finalState}
+          className="flex flex-col w-full max-w-[600px] mx-auto mb-4 px-2"
+        >
           <div className="one-bike-array bg-neutral-200">
             <h3>Marque :</h3>
             <h4 className="font-normal ">
@@ -85,7 +85,7 @@ export default function OneBike({ params }) {
           <div className="one-bike-array bg-neutral-200">
             <h3>Neuf ?</h3>
             <h4 className="font-normal">
-              {bike?.bike_new==="new" ? "oui" : "occasion"}
+              {bike?.bike_new === "new" ? "oui" : "occasion"}
             </h4>
           </div>
           {bike?.bike_type && (
@@ -130,7 +130,7 @@ export default function OneBike({ params }) {
               <h4 className="font-normal">{bike?.bike_wheels}</h4>
             </div>
           )}
-          {bike?.bike_brake !="" && (
+          {bike?.bike_brake != "" && (
             <div className="one-bike-array bg-neutral-200">
               <h3>Freins : </h3>
               <h4 className="font-normal">{bike?.bike_brake}</h4>
@@ -142,10 +142,12 @@ export default function OneBike({ params }) {
             <h4 className="font-normal">{bike?.bike_elec ? "oui" : "non"} </h4>
           </div>
 
-          {bike?.bike_elec_detail && <div className="one-bike-array bg-neutral-200">
-            <h3>Détail :</h3>
-            <h4 className="font-normal">{bike?.bike_elec_detail}</h4>
-          </div>}
+          {bike?.bike_elec_detail && (
+            <div className="one-bike-array bg-neutral-200">
+              <h3>Détail :</h3>
+              <h4 className="font-normal">{bike?.bike_elec_detail}</h4>
+            </div>
+          )}
 
           {!bike?.bike_promo ? (
             <div className="one-bike-array bg-neutral-200">
@@ -169,12 +171,14 @@ export default function OneBike({ params }) {
           {bike?.bike_description && (
             <div className="w-full my-6">
               <h3>Informations complémentaires :</h3>
-              <h4 className="font-normal">{he.decode(bike?.bike_description)}</h4>
+              <h4 className="font-normal">
+                {he.decode(bike?.bike_description)}
+              </h4>
             </div>
           )}
-        </div>
+        </motion.div>
       </Container>
-      
+
       <div className="relative w-full my-16 flexMid">
         <Image
           alt={bike?.bike_model}
