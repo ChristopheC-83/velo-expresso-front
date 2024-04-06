@@ -40,7 +40,7 @@ export default function OneBike({ params }) {
   }
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full overflow-hidden">
       <ArrowToTop />
       <HeaderImage
         image={imgPath + bike?.bike_picture}

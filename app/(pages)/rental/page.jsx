@@ -31,11 +31,11 @@ export default function Rentals() {
   }
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden ">
       <ArrowToTop />
       <HeaderImage image="/images/rental/rental.jpg" title="La location" />
       <Container>
-        <div className="w-full">
+        <div className="w-full px-4">
           <motion.div
             initial={subTitleVariants.initialFromLeft}
             whileInView={subTitleVariants.finalState}
@@ -87,7 +87,7 @@ export default function Rentals() {
           </motion.div>
         </div>
         {/* Texte fourni par la DB, par le proprio du mag */}
-        <div className="w-full mx-auto mb-6 sm:w-4/5 md:w-3/5">
+        <div className="w-full px-4 mx-auto mb-6 sm:w-4/5 md:w-3/5">
           <hr />
           {decryptedText && (
             <div

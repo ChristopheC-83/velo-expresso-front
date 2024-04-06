@@ -31,7 +31,7 @@ export default function Atelier() {
       <ArrowToTop />
       <HeaderImage image="/images/meca/meca.jpg" title="L'atelier" />
       <Container>
-        <div className="w-full">
+        <div className="w-full px-4">
           <motion.div
             initial={subTitleVariants.initialFromLeft}
             whileInView={subTitleVariants.finalState}
@@ -84,7 +84,7 @@ export default function Atelier() {
             <div className="w-[350px] h-1"></div>
           </div>
         </div>
-        <div className="w-full mx-auto my-6 sm:w-4/5 md:w-3/5">
+        <div className="w-full px-4 mx-auto my-6 sm:w-4/5 md:w-3/5">
           <hr />
           <h5 className="mt-6 mb-4">
             * Ces tarifs sont estimatifs. Un devis final vous sera communiqué

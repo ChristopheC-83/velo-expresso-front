@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 export default function HeaderImage({ image, title, subtitle }) {
   return (
-    <motion.div className="w-full  h-[100vw] lg:h-[90vh] bg-ve-dark ">
+    <motion.div className="w-full  h-[60vw] sm:h-[90vh] bg-ve-dark overflow-hidden">
       <motion.div
-        className={`relative w-full h-full bg-no-repeat bg-top aspect-square lg:aspect-[16/9] overflow-hidden bg-cover bg-fixed`}
+        className={`relative w-full h-full bg-no-repeat bg-top aspect-square sm:aspect-[16/9] overflow-hidden bg-auto sm:bg-cover bg-fixed`}
         style={{ backgroundImage: `url(${image})` }}
         
       >
