@@ -8,6 +8,7 @@ import CardBike from "@/components/bikes/CardBike";
 import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useBikes } from "@/hooks/useBikes";
+import { cardToUpVariants } from "@/lib/framerVariants";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import {  useState } from "react";
@@ -37,19 +38,8 @@ export default function NewBikes() {
       <HeaderImage image="/images/newBikes/neuf.jpg" title="Les Vélos"/>
       <Container>
         <motion.div
-          initial={{
-            opacity: 0.15,
-            x: -250,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 0.5,
-              delay: -0.15,
-              ease: "easeInOut",
-            },
-          }}
+                initial={cardToUpVariants.initialFromDown}
+                whileInView={cardToUpVariants.finalState}
         >
           <h3 className="m-4 text-xl text-center font-weight sm:text-3xl ">
             Passionné, amateur ou débutant ?{" "}

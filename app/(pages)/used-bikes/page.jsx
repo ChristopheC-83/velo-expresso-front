@@ -11,6 +11,7 @@ import { useState } from "react";
 import { useBikes } from "@/hooks/useBikes";
 import Loader from "@/app/loading";
 import { motion, AnimatePresence } from "framer-motion";
+import { cardToUpVariants } from "@/lib/framerVariants";
 
 export default function UsedBikes() {
   // const bikes = bikesCatalogue.filter((bike) => bike.new === false);
@@ -40,19 +41,8 @@ export default function UsedBikes() {
       />
       <Container>
         <motion.div
-        initial={{
-          opacity: 0.15,
-          x: -250,
-        }}
-        whileInView={{
-          opacity: 1,
-          x: 0,
-          transition: {
-            duration: 0.5,
-            delay: -0.15,
-            ease: "easeInOut",
-          },
-        }}
+                initial={cardToUpVariants.initialFromDown}
+                whileInView={cardToUpVariants.finalState}
         >
           <h3 className="m-4 text-xl text-center font-weight sm:text-3xl ">
             Vous cherchez un vélo d'occasion ?

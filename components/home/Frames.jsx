@@ -10,6 +10,7 @@ import { useFrames } from "@/hooks/useFrames";
 import Loader from "@/app/loading";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { cardToUpVariantsScale } from "@/lib/framerVariants";
 
 export default function Frames() {
   const { data: frames, isFetching, error } = useFrames();
@@ -33,21 +34,9 @@ export default function Frames() {
             <motion.div
               key={frame?.id}
               className={`relative lg:w-2/5 lg:h-[600px] lg:shadow-lg hover:scale-[1.01] lg:transition-all lg:duration-500 `}
-              initial={{
-                opacity: 0.75,
-                y: 40,
-                scale: 0.9,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  duration: 0.2,
-                  delay: -0.15,
-                  ease: "easeInOut",
-                },
-              }}
+              
+              initial={cardToUpVariantsScale.initialFromDown}
+              whileInView={cardToUpVariantsScale.finalState}
             >
               <Image
                 src={imgPath + frame?.image}

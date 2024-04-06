@@ -8,7 +8,8 @@ import Container from "@/components/container/Container";
 import ArrowToTop from "@/components/home/components/ArrowToTop";
 import { useWorkshop } from "@/hooks/useWorkshop";
 import he from "he";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import { cardToUpVariants, subTitleVariants } from "@/lib/framerVariants";
 
 export default function Atelier() {
   const { data: workshop, isFetching, error } = useWorkshop();
@@ -28,23 +29,12 @@ export default function Atelier() {
   return (
     <div className="relative w-full overflow-hidden">
       <ArrowToTop />
-      <HeaderImage image="/images/meca/meca.jpg" title="L'atelier"/>
+      <HeaderImage image="/images/meca/meca.jpg" title="L'atelier" />
       <Container>
         <div className="w-full">
           <motion.div
-          initial={{
-            opacity: 0.15,
-            x: -250,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 0.5,
-              delay: -0.15,
-              ease: "easeInOut",
-            },
-          }}
+            initial={subTitleVariants.initialFromLeft}
+            whileInView={subTitleVariants.finalState}
           >
             <h2 className="m-4 text-xl text-center font-weight sm:text-3xl ">
               Retrouvez ici les tarifs et les forfaits pour l'entretien de votre
@@ -52,42 +42,21 @@ export default function Atelier() {
             </h2>
           </motion.div>
           <motion.div
-          initial={{
-            opacity: 0.15,
-            x: 250,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 0.5,
-              delay: -0.15,
-              ease: "easeInOut",
-            },
-          }}
+            initial={subTitleVariants.initialFromRight}
+            whileInView={subTitleVariants.finalState}
           >
             <h4 className="m-4 text-xl text-center font-weight sm:text-3xl ">
-              Nous montons également les pièces <br />que vous nous rapportez avec votre vélo 😉
+              Nous montons également les pièces <br />
+              que vous nous rapportez avec votre vélo 😉
             </h4>
           </motion.div>
 
           <div className="flex flex-wrap justify-center w-full gap-2 pt-4 mx-auto my-6 sm:gap-x-2 md:gap-x-4 md:w-full">
-            {categories.map((categorie, index) => (
+            {categories.map((categorie) => (
+            // Dans une catégorie de tâches, on mappe les tâches
               <motion.div
-
-              initial={{
-                opacity: 0.15,
-                y: 150,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 0.5,
-                  delay: -0.15,
-                  ease: "easeInOut",
-                },
-              }}
+                initial={cardToUpVariants.initialFromDown}
+                whileInView={cardToUpVariants.finalState}
                 key={categorie.id}
                 className="w-full h-fit text-center border-x-2 border-t-2 border-black xs:w-[350px]"
               >
@@ -110,12 +79,13 @@ export default function Atelier() {
                 </div>
               </motion.div>
             ))}
+            {/* tampons pour avoir un cadre seul en bas sur la gauche si besoin */}
             <div className="w-[350px] h-1"></div>
             <div className="w-[350px] h-1"></div>
           </div>
         </div>
         <div className="w-full mx-auto my-6 sm:w-4/5 md:w-3/5">
-        <hr />
+          <hr />
           <h5 className="mt-6 mb-4">
             * Ces tarifs sont estimatifs. Un devis final vous sera communiqué
             lorsque nous verrons le vélo en magasin.

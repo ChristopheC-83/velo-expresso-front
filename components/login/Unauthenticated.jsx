@@ -11,7 +11,7 @@ export default function Unauthenticated() {
 
   // permet l'activation du bouton de connexion avec Google en cochant la case des CGU
   function handleCheckboxChange(event) {
-    console.log("event.target.checked", event.target.checked);
+    // console.log("event.target.checked", event.target.checked);
     setCheckedCGU(event.target.checked);
   }
 
