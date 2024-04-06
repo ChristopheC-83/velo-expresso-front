@@ -27,7 +27,7 @@ export default function ArrowToTop() {
   return (
     <div>
       {isVisible && (
-        <div className="fixed z-30 bottom-16 right-6">
+        <div className="fixed z-30 cursor-pointer bottom-16 right-6">
           <FaArrowCircleUp
             className="overflow-hidden text-5xl text-white rounded-full bg-ve-blue"
             onClick={scrollToTop}

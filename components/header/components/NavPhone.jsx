@@ -5,9 +5,6 @@ import Link from "next/link";
 import LinkConnection from "./LinkConnection";
 
 export default function NavPhone() {
-  
- 
-
   return (
     <div
       className={`flex flex-col h-full items-end ml-auto w-full menu-appear text-black `}
@@ -25,7 +22,6 @@ export default function NavPhone() {
       <div className="p-6 pr-8 w-fit">
         <LinkConnection />
       </div>
-     
     </div>
   );
 }

@@ -3,13 +3,8 @@
 
 import Link from "next/link";
 import { navlinks } from "@/lib/navlinks";
-import { motion } from "framer-motion";
 
 export default function NavScreen() {
-
-
-
-    
   return (
     <navbar className="hidden h-16 pb-2 lg:flex justify-evenly">
       {navlinks.map((link) => (

@@ -1,4 +1,5 @@
 // header et ses composants
+//  2 navbar en fonction de la taille de l'écran + ou - 1024px
 
 import Container from "../container/Container";
 import NavScreen from "./components/NavScreen";
