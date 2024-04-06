@@ -78,7 +78,7 @@ export default function Authenticated({ session }) {
                 >
                   {button.iconBtn}
                 </span>
-                <p className="w-full text-lg text-center sm:text-xl ">
+                <p className={`w-full text-lg text-center sm:text-xl hover:${button.colorBtn}`}>
                   {" "}
                   {button.textBtn}
                 </p>
