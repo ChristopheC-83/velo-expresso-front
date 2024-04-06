@@ -16,10 +16,10 @@ export default function OpinionInput() {
   const formComment = useRef();
   const { data: session, status } = useSession();
 
-  if(session){
-    console.log("session opinion input", session);
-    // console.log ("opinions : ", opinions)
-  }
+  // if(session){
+  //   console.log("session opinion input", session);
+  //   // console.log ("opinions : ", opinions)
+  // }
 
   function handleCheckboxChange(event) {
     setCheckedCGU(event.target.checked);
