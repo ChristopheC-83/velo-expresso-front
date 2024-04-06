@@ -1,3 +1,5 @@
+//  Footer en un composant unique
+
 import { HiMail } from "react-icons/hi";
 import { BsFillTelephoneOutboundFill } from "react-icons/bs";
 import { FaCalendarAlt } from "react-icons/fa";
@@ -46,7 +48,7 @@ export default function Footer() {
           <div className="flex flex-col justify-between md:items-center md:flex-row ">
             <div className="p-4 rounded-xl bg-neutral-800/60">
               <h4>
-                <Link href="/cgu">Mentions Légales</Link>
+                <Link href="/cgu">Mentions Légales / CGU</Link>
               </h4>
             </div>
             <h5>&copy; COPYRIGHT VELO-EXPRESSO - 2024</h5>
