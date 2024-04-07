@@ -71,14 +71,14 @@ export default function Authenticated({ session }) {
           <div className="flex flex-col w-full" key={button.id}>
             <div onClick={button.onClick}>
               <div
-                className={`w-full gap-3 px-6 py-4 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer flexMid hover:bg-neutral-700 hover:${button.colorBtn}`}
+                className={`w-full gap-3 px-6 py-4 mx-auto text-xl font-bold duration-300 border-4 border-black cursor-pointer flexMid hover:bg-neutral-700 hover:text-white`}
               >
                 <span
                   className={`text-xl ${button.colorBtn} sm:text-2xl md:text-3xl me-auto shrink-0`}
                 >
                   {button.iconBtn}
                 </span>
-                <p className={`w-full text-lg text-center sm:text-xl hover:${button.colorBtn}`}>
+                <p className={`w-full text-lg text-center sm:text-xl`}>
                   {" "}
                   {button.textBtn}
                 </p>
