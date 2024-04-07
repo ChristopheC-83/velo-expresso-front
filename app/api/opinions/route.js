@@ -1,5 +1,8 @@
+// Un avis est envoyé en DB par un utilisateur authentifié avec son mail.
+
 import prisma from "@/lib/connect";
 import { NextResponse } from "next/server";
+
 
 
 export const POST = async (req, res) => {

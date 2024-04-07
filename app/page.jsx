@@ -12,12 +12,19 @@ export default function Home() {
 
   return (
     <div className="relative w-full">
+      {/* La fleche qui permet de remonter en haut du site */}
       <ArrowToTop />
+      {/* l'image ou les images en haut du site, administrable du back */}
       <Slider />
+      {/*  les cadres de présentations, administrables */}
       <Frames />
+      {/*  les partenaires, administrable */}
       <Brands />
+      {/*  les avis clients, gérable */}
       <Opinions />
+      {/* Les réseaux sociaux, en dur */}
       <Social />
+      {/* google maps... à moins de déménager... */}
       <Map/>
     </div>
   );

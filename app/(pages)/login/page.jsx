@@ -1,12 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-// page de Login et Logout
+// page de Login et Logout pour laisser un avis
 
 "use client";
 import Loader from "@/app/loading";
 import Authenticated from "@/components/login/Authenticated";
 import Unauthenticated from "@/components/login/Unauthenticated";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 
 export default function Login() {
   const { data: session, status } = useSession();

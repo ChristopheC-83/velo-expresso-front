@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-// Un vélo détaillé
+// Un vélo détaillé en fonction de son ID
 // la DB des vélos est alimentée par le propriétaire du magasin
 
 "use client";
