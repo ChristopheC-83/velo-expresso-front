@@ -16,7 +16,7 @@ export default function TitleHeader() {
   return (
     <div className="relative flex items-center justify-between w-full p-2 lg:justify-center lg:px-16">
       <Link href="/">
-        <h1 className="text-ve-blue text-shadow">Vélo-Expresso</h1>
+        <h1 className="text-ve-blue text-shadow ">Vélo-Expresso</h1>
       </Link>
       <div className="hidden lg:absolute lg:block right-16">
         <BtnConnection />

@@ -1,41 +1,43 @@
-@font-face {
-  font-family: "Roboto";
-  src: url("https://fonts.bunny.net/css?family=roboto:100,300,700,900");
-  font-weight: 100 300 700 900;
-  font-style: normal;
-}
 h1 {
   font-size: clamp(20px, 20px + 1vw, 29px);
   letter-spacing: calc(1px + 0.02vw);
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-family: "Reem Kufi Fun", sans-serif;
 }
 
 h2 {
   font-size: clamp(20px, 16px + 1.45vw, 30px);
   letter-spacing: calc(1px + 0.04vw);
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-family: "Reem Kufi Fun", sans-serif;
 }
 
 h3 {
   font-size: clamp(16px, 14px + 1vw, 24px);
   letter-spacing: calc(1px + 0.02vw);
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-family: "Reem Kufi Fun", sans-serif;
 }
 
 h4 {
   font-size: clamp(18px, 14px + 0.7vw, 22px);
   line-height: clamp(22px, 20px + 1.2vw, 35px);
-  font-family: "Roboto", sans-serif;
+  font-family: "Reem Kufi Fun", sans-serif;
   font-weight: bold;
+}
+
+h5 {
+  font-family: "Reem Kufi Fun";
 }
 
 p {
   font-size: clamp(12px, 10px + 0.6vw, 16px);
   line-height: clamp(20px, 20px + 1vw, 33px);
-  font-family: "Roboto", sans-serif;
+  font-family: "Reem Kufi Fun", sans-serif;
+}
+
+a {
+  font-family: "Reem Kufi Fun", sans-serif;
 }
 
 .text-shadow {

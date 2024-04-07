@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        labrada: ["Labrada"],
+        kufi: ["Reem Kufi Fun"],
+      },
       colors: {
         ve: {
           blue: "#0BBBEC",
