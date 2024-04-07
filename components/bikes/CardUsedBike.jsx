@@ -21,8 +21,8 @@ export default function CardBike({ bike }) {
           <div className="flex flex-col ">
             <h2>{bike?.bike_type}</h2>
             <div className="flex flex-col">
-              <h3 className="pr-2 mb-2 font-weight">{bike?.bike_brand}</h3>
-              <h3 className="pr-2 mb-2 font-weight">{bike?.bike_model}</h3>
+              <h3 className="pr-2 mb-2 uppercase font-weight ">{bike?.bike_brand}</h3>
+              <h3 className="pr-2 mb-2 capitalize font-weight ">{bike?.bike_model}</h3>
             </div>
           </div>
           <div className="flex flex-col items-center">

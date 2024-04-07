@@ -70,7 +70,7 @@ export default function Frames() {
                 >
                   {he.decode(frame?.title)}
                 </motion.h2>
-                <motion.h5
+                <motion.h4
                   className="w-1/2 text-center"
                   initial={{
                     opacity: 0,
@@ -87,7 +87,7 @@ export default function Frames() {
                   }}
                 >
                   {he.decode(frame?.text)}
-                </motion.h5>
+                </motion.h4>
                 <Link
                   href={frame?.btnLink}
                   className="px-4 py-2 mt-4 font-semibold text-white border-2 border-white bg-neutral-900/50 "

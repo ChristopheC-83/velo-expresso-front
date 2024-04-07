@@ -48,7 +48,8 @@ export default function OneBike({ params }) {
           whileInView={subTitleVariants.finalState}
         >
           <h2 className="m-8 text-xl text-center font-weight sm:text-3xl ">
-            Le {bike?.bike_brand} {bike?.bike_model}
+            Le <span className="uppercase ">{bike?.bike_brand}</span>{" "}
+            <span className="capitalize ">{bike?.bike_model}</span>
           </h2>
         </motion.div>
         <motion.div
@@ -67,13 +68,13 @@ export default function OneBike({ params }) {
         >
           <div className="one-bike-array bg-neutral-200">
             <h3>Marque :</h3>
-            <h4 className="font-normal ">
+            <h4 className="font-normal uppercase ">
               <b>{bike?.bike_brand}</b>
             </h4>
           </div>
           <div className="one-bike-array ">
             <h3>Modèle :</h3>
-            <h4 className="font-normal">
+            <h4 className="font-normal capitalize ">
               <b>{bike?.bike_model}</b>
             </h4>
           </div>
@@ -125,7 +126,7 @@ export default function OneBike({ params }) {
               <h4 className="font-normal">{bike?.bike_wheels}</h4>
             </div>
           )}
-          {bike?.bike_brake  && (
+          {bike?.bike_brake && (
             <div className="one-bike-array bg-neutral-200">
               <h3>Freins : </h3>
               <h4 className="font-normal">{bike?.bike_brake}</h4>
@@ -165,7 +166,8 @@ export default function OneBike({ params }) {
           )}
           {bike?.bike_description && (
             <div className="w-full my-6">
-              <h3>Informations complémentaires :</h3>
+              <h3><u>Informations complémentaires :</u></h3>
+              <br />
               <h4 className="font-normal">
                 {he.decode(bike?.bike_description)}
               </h4>
