@@ -31,3 +31,20 @@
 .one-bike-array{
 @apply flex items-center justify-between p-2 px-4 border border-black
 }
+
+/* loader */
+
+.animate-loader{
+
+animation: animateLoader 2s linear infinite;
+
+}
+
+@keyframes animateLoader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
