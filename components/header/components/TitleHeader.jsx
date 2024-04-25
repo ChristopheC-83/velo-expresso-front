@@ -9,14 +9,25 @@ import { ImMenu4 } from "react-icons/im";
 import NavPhone from "./NavPhone";
 import Link from "next/link";
 import BtnConnection from "./BtnConnection";
+import Image from "next/image";
+import logo from '/public/images/logo_ve.png'
+
 
 export default function TitleHeader() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <div className="relative flex items-center justify-between w-full p-2 lg:justify-center lg:px-16">
+    <div className="relative flex items-center justify-between w-full lg:justify-center lg:px-16">
       <Link href="/">
-        <h1 className="text-ve-blue text-shadow ">Vélo-Expresso</h1>
+          <Image
+              src={logo}
+              alt="velo expresso"
+              width={300}
+              className=""
+              
+          
+          />
+        {/* <h1 className="text-ve-blue text-shadow ">Vélo-Expresso</h1> */}
       </Link>
       <div className="hidden lg:absolute lg:block right-16">
         <BtnConnection />

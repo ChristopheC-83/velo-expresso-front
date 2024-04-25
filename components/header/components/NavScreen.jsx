@@ -6,7 +6,7 @@ import { navlinks } from "@/lib/navlinks";
 
 export default function NavScreen() {
   return (
-    <navbar className="hidden h-16 pb-2 lg:flex justify-evenly">
+    <navbar className="hidden h-12 lg:flex justify-evenly">
       {navlinks.map((link) => (
         <div key={link.id} className="w-full flexMid">
           <Link href={link.path}>
