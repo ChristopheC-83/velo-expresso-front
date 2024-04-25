@@ -76,13 +76,13 @@ export default function Rentals() {
             </div>
             {rentalsItems.map((item) => (
               <div key={item.id} className="flex w-full">
-                <div className="price-rental  w-[30%] bg-neutral-400 text-neutral-900 ">
+                <div className="price-rental font-bold w-[30%] bg-neutral-400 text-neutral-900 ">
                   <p className="mr-auto">{he.decode(item.name)}</p>
                 </div>
-                <p className="price-rental w-[15%]">{item.half_day} €</p>
-                <p className="price-rental w-[15%]">{item.day} €</p>
-                <p className="price-rental w-[15%]">{item.extra_day} €</p>
-                <p className="price-rental w-[15%]">{item.week} €</p>
+                <p className="price-rental w-[15%] font-bold">{item.half_day} €</p>
+                <p className="price-rental w-[15%] font-bold">{item.day} €</p>
+                <p className="price-rental w-[15%] font-bold">{item.extra_day} €</p>
+                <p className="price-rental w-[15%] font-bold">{item.week} €</p>
               </div>
             ))}
           </motion.div>
