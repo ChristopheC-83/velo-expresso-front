@@ -61,7 +61,7 @@ export default function Atelier() {
                 className="w-full h-fit text-center border-x-2 border-t-2 border-black xs:w-[350px]"
               >
                 <div className="flex flex-col">
-                  <h3 className="py-4 uppercase border-b-2 border-black bg-ve-blue/50">
+                  <h3 className="py-4 uppercase border-b-2 border-black bg-neutral-300">
                     {categorie.name}
                   </h3>
 
@@ -72,7 +72,7 @@ export default function Atelier() {
                         key={operation.id}
                         className="flex items-center justify-between w-full p-2 border-b-2 border-black"
                       >
-                        <p>{he.decode(operation.name)}</p>
+                        <p>{he.decode(operation.name).toUpperCase()}</p>
                         <p>{operation.task_price} €</p>
                       </div>
                     ))}
