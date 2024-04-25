@@ -72,8 +72,8 @@ export default function Atelier() {
                         key={operation.id}
                         className="flex items-center justify-between w-full p-2 border-b-2 border-black"
                       >
-                        <p>{he.decode(operation.name).toUpperCase()}</p>
-                        <p>{operation.task_price} €</p>
+                        <p className="mr-2 text-start">{he.decode(operation.name).toUpperCase()}</p>
+                        <p className="text-nowrap ">{operation.task_price} €</p>
                       </div>
                     ))}
                 </div>
