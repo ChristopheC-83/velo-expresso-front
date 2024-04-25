@@ -67,7 +67,7 @@ export default function Rentals() {
             whileInView={cardToUpVariants.finalState}
             className="flex flex-wrap justify-center border-4 border-black w-full mx-auto my-6 lg:w-full max-w-[950px]"
           >
-            <div className="flex w-full bg-ve-blue/50 font-weight">
+            <div className="flex w-full bg-neutral-900 text-neutral-50 font-weight">
               <p className="timing-rental w-[30%]">Article</p>
               <p className="timing-rental w-[15%]">Demi-journée</p>
               <p className="timing-rental w-[15%]">Journée</p>
@@ -76,7 +76,7 @@ export default function Rentals() {
             </div>
             {rentalsItems.map((item) => (
               <div key={item.id} className="flex w-full">
-                <div className="price-rental  w-[30%] bg-ve-blue/50 ">
+                <div className="price-rental  w-[30%] bg-neutral-900 text-neutral-50 ">
                   <p className="mr-auto">{he.decode(item.name)}</p>
                 </div>
                 <p className="price-rental w-[15%]">{item.half_day} €</p>
