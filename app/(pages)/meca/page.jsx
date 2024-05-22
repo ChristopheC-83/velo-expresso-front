@@ -29,7 +29,7 @@ export default function Atelier() {
   return (
     <div className="relative w-full overflow-hidden">
       <ArrowToTop />
-      <HeaderImage image="/images/meca/meca.jpg" title="L'atelier" />
+      <HeaderImage image="/images/meca/meca2.jpg" title="L'atelier" />
       <Container>
         <div className="w-full px-4">
           <motion.div
