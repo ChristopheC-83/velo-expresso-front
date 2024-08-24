@@ -66,9 +66,9 @@ export default function Slider() {
               href={allSliders[sliderNumber]?.btnLink}
               className="absolute p-2 translate-x-1/2 border-4 border-white bottom-14 sm:bottom-36 w-[200px] sm:w-[300px] flexMid right-1/2 bg-neutral-900"
             >
-              <h2 className="text-xl sm:text-3xl">
+              <h5 className="text-xl text-center sm:text-2xl">
                 {allSliders[sliderNumber]?.btnText}
-              </h2>
+              </h5>
             </a></>}
 
             {allSliders?.length>1 &&  (
