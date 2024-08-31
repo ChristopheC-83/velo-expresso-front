@@ -60,6 +60,9 @@ export default function OneBike({ params }) {
             Vélo
             {bike?.bike_new === "new" ? " neuf." : " d' occasion."}
           </h3>
+          <h3 className="m-8 text-lg text-center font-weight sm:text-2xl ">
+            {bike?.bike_sold == "1" ? "(Vendu ! Désolé !)" : ""}
+          </h3>
         </motion.div>
         <motion.div
           initial={cardToUpVariants.initialFromDown}
