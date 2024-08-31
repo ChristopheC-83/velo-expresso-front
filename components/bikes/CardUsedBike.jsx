@@ -6,7 +6,8 @@ export default function CardBike({ bike }) {
   const imgPath = "https://dbve.barpat.fun/public/assets/images/bikes/";
   return (
     <Link href={`/bike/${bike?.bike_id}`}
-      className={`flex flex-col justify-start h-[100%] border-2 overflow-hidden  w-full`}
+      className={`flex flex-col justify-start h-[100%] border-2 overflow-hidden  w-full 
+         ${bike?.bike_sold && "sold"}`}
     >
       <div className="relative w-full p-2 overflow-hidden aspect-square">
         <Image

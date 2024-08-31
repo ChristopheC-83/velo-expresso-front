@@ -159,4 +159,26 @@ a {
   color: #f1f1f1;
   background-color: crimson;
   z-index: 1;
+}
+
+.sold {
+  position: relative;
+}
+.sold::before {
+  content: "VENDU";
+  position: absolute;
+  transform-origin: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  top: 0;
+  left: 0;
+  transform: rotate(-45deg) translateY(-30px) translateX(-70px);
+  color: #f1f1f1;
+  background-color: #0BBBEC;
+  z-index: 2;
 }/*# sourceMappingURL=custom.css.map */
